@@ -33,21 +33,19 @@ body {
   background-color: #0070f3;
   color: white;
   text-align: center;
-  padding: 4rem 2rem;
+  padding: 3rem 2rem;
   border-radius: 12px;
-  margin: 2rem;
-  max-width: 900px;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 2rem auto;
+  max-width: 700px;
 }
 
 .hero h1 {
-  font-size: 2.5rem;
+  font-size: 2rem;
   margin-bottom: 0.5rem;
 }
 
 .hero p {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   margin-bottom: 1.5rem;
 }
 
@@ -75,24 +73,52 @@ body {
 
 .card {
   background: white;
-  padding: 1.5rem;
+  padding: 2rem 1.5rem;
   border-radius: 12px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.05);
-  width: 220px;
+  width: 260px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
 }
 
 .card h3 {
-  font-size: 1.25rem;
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
 }
 
-.card-btn {
-  display: inline-block;
-  margin-top: 1rem;
-  padding: 0.5rem 1rem;
-  background-color: #0070f3;
-  color: white;
-  text-decoration: none;
-  border-radius: 8px;
+.price {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: #0070f3;
+}
+
+.features {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: left;
+}
+
+.features li {
+  margin-bottom: 0.5rem;
+  position: relative;
+  padding-left: 1.2rem;
+}
+
+.features li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #0070f3;
+}
+
+.highlighted {
+  border: 2px solid #0070f3;
 }
 
 .signup-section {
