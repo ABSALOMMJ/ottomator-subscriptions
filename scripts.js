@@ -5,7 +5,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const password = document.querySelector("input[type='password']");
     const ctaButton = document.querySelector(".cta-button");
 
-    form.addEventListener("submit", function (event) {
+    // Handle form submission
+    form.addEventListener("submit", (event) => {
         event.preventDefault();
 
         const nameVal = fullName.value.trim();
@@ -17,22 +18,23 @@ document.addEventListener("DOMContentLoaded", () => {
             return;
         }
 
-        form.classList.add("submitting");
         ctaButton.disabled = true;
         const originalText = ctaButton.innerText;
         ctaButton.innerText = "Submitting...";
+        form.classList.add("submitting");
 
         setTimeout(() => {
             ctaButton.disabled = false;
             ctaButton.innerText = originalText;
             form.classList.remove("submitting");
+
+            // Redirect to thank you page
             window.location.href = "thankyou.html";
         }, 800);
     });
 
-    const inputs = [fullName, email, password];
-
-    inputs.forEach(input => {
+    // Input focus styling
+    [fullName, email, password].forEach((input) => {
         input.addEventListener("focus", () => {
             input.style.borderColor = "#3B82F6";
             input.style.boxShadow = "0 0 0 3px rgba(59,130,246,0.2)";
