@@ -5,6 +5,128 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Ottomator</title>
   <link rel="stylesheet" href="styles.css" />
+  <!-- Link to Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    /* Add your custom CSS here */
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+      background: #f9f9f9;
+    }
+
+    /* Sticky Navbar */
+    header {
+      position: sticky;
+      top: 0;
+      background: #fff;
+      padding: 15px 50px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      z-index: 10;
+    }
+
+    header .logo {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.8rem;
+      color: #5c6bc0;
+      text-decoration: none;
+    }
+
+    header nav {
+      float: right;
+    }
+
+    header nav a {
+      margin-left: 30px;
+      color: #333;
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+
+    header nav a:hover {
+      color: #5c6bc0;
+      transform: scale(1.05);
+    }
+
+    /* Hero Section */
+    .hero-box {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      background: linear-gradient(135deg, #5c6bc0, #4a90e2);
+      color: white;
+      padding: 100px 20px;
+      min-height: 100vh;
+      position: relative;
+    }
+
+    .hero-box h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      font-weight: 600;
+    }
+
+    .hero-box p {
+      font-size: 1.2rem;
+      margin-bottom: 40px;
+      font-weight: 400;
+    }
+
+    .cta-button {
+      background-color: #ff4081;
+      color: white;
+      padding: 15px 30px;
+      font-size: 1.2rem;
+      text-decoration: none;
+      border-radius: 50px;
+      transition: all 0.3s ease;
+    }
+
+    .cta-button:hover {
+      background-color: #e2356f;
+      transform: scale(1.1);
+    }
+
+    /* Floating Blob */
+    .floating-blob {
+      position: absolute;
+      background-color: rgba(255, 64, 129, 0.2);
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-20px); }
+      100% { transform: translateY(0); }
+    }
+
+    /* Responsive */
+    @media screen and (max-width: 768px) {
+      header nav {
+        display: none;
+      }
+
+      header .logo {
+        font-size: 1.5rem;
+      }
+
+      .hero-box h1 {
+        font-size: 2rem;
+      }
+
+      .cta-button {
+        padding: 10px 20px;
+      }
+    }
+  </style>
 </head>
 <body>
   <!-- Interactive Floating Blob -->
@@ -33,7 +155,7 @@
     const blob = document.getElementById("blob");
     document.addEventListener("mousemove", (e) => {
       const { clientX, clientY } = e;
-      blob.style.transform = `translate(${clientX}px, ${clientY}px)`;
+      blob.style.transform = `translate(${clientX - 50}px, ${clientY - 50}px)`; // Center the blob on cursor
     });
   </script>
 </body>
