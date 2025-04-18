@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Ottomator</title>
   <link rel="stylesheet" href="styles.css" />
-  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
   <style>
     body {
@@ -49,6 +48,14 @@
       transform: scale(1.05);
     }
 
+    main {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 80vh;
+      padding: 20px;
+    }
+
     .hero-box {
       display: flex;
       flex-direction: column;
@@ -57,12 +64,11 @@
       text-align: center;
       background: linear-gradient(135deg, #5c6bc0, #4a90e2);
       color: white;
-      padding: 80px 20px;
-      min-height: 70vh;
-      position: relative;
-      z-index: 1;
-      margin: 60px 20px;
+      padding: 60px 40px;
+      width: 100%;
+      max-width: 650px;
       border-radius: 16px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
     }
 
     .hero-box h1 {
@@ -95,7 +101,14 @@
       transform: scale(1.05);
     }
 
-    /* Cursor-Following Gradient Blob */
+    footer {
+      background-color: #f1f1f1;
+      text-align: center;
+      padding: 20px 10px;
+      font-size: 0.9rem;
+      color: #555;
+    }
+
     #cursorBlob {
       position: fixed;
       width: 250px;
@@ -126,6 +139,11 @@
         padding: 10px 20px;
         font-size: 1rem;
       }
+
+      .hero-box {
+        padding: 40px 20px;
+        margin: 20px;
+      }
     }
   </style>
 </head>
@@ -151,6 +169,11 @@
       <a class="cta-button" href="signup.html">Sign Up Now</a>
     </section>
   </main>
+
+  <!-- Footer -->
+  <footer>
+    &copy; 2025 Ottomator. All rights reserved. | Made with ❤️ for creators worldwide.
+  </footer>
 
   <!-- Blob Script -->
   <script>
