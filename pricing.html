@@ -5,16 +5,232 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Pricing - Ottomator</title>
   <link rel="stylesheet" href="styles.css" />
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+      background: #f9f9f9;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      background: #fff;
+      padding: 15px 50px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      z-index: 10;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header .logo {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.8rem;
+      color: #5c6bc0;
+      text-decoration: none;
+    }
+
+    header nav a {
+      margin-left: 30px;
+      color: #333;
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+
+    header nav a:hover {
+      color: #5c6bc0;
+      transform: scale(1.05);
+    }
+
+    .pricing-container {
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .pricing-header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+
+    .pricing-header p {
+      font-size: 1.2rem;
+      margin-bottom: 40px;
+      font-weight: 400;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .pricing-grid {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      margin-top: 40px;
+    }
+
+    .pricing-card {
+      background: #fff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      width: 300px;
+    }
+
+    .pricing-card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+    }
+
+    .pricing-card .price {
+      font-size: 1.6rem;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+
+    .pricing-card .price span {
+      font-size: 1rem;
+      color: #777;
+    }
+
+    .pricing-card ul {
+      text-align: left;
+      margin-bottom: 30px;
+    }
+
+    .pricing-card ul li {
+      margin-bottom: 10px;
+      font-size: 1rem;
+      font-weight: 400;
+    }
+
+    .cta-button {
+      background-color: #ffffff;
+      color: #4a6ee0;
+      padding: 15px 30px;
+      font-size: 1.1rem;
+      text-decoration: none;
+      border-radius: 50px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    }
+
+    .cta-button:hover {
+      background-color: #e0e7ff;
+      transform: scale(1.05);
+    }
+
+    .featured .cta-button {
+      background-color: #4a6ee0;
+      color: white;
+    }
+
+    .featured .cta-button:hover {
+      background-color: #3a57c6;
+    }
+
+    #cursorBlob {
+      position: fixed;
+      width: 250px;
+      height: 250px;
+      border-radius: 50%;
+      pointer-events: none;
+      background: radial-gradient(circle, #5c6bc0 0%, #4a90e2 100%);
+      filter: blur(100px);
+      opacity: 0.45;
+      z-index: 0;
+      transition: top 0.2s ease, left 0.2s ease;
+    }
+
+    footer {
+      background: #f3f4f6;
+      padding: 60px 20px;
+      text-align: center;
+      border-top: 1px solid #e5e7eb;
+      font-size: 0.95rem;
+      color: #4b5563;
+    }
+
+    .footer-content {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .footer-logo {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.6rem;
+      color: #4a6ee0;
+      text-decoration: none;
+      display: inline-block;
+      margin-bottom: 20px;
+    }
+
+    .footer-nav {
+      margin: 20px 0;
+    }
+
+    .footer-nav a {
+      margin: 0 15px;
+      color: #4b5563;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .footer-nav a:hover {
+      color: #5c6bc0;
+    }
+
+    .footer-copy {
+      margin-top: 20px;
+      color: #9ca3af;
+      font-size: 0.85rem;
+    }
+
+    @media screen and (max-width: 768px) {
+      header nav {
+        display: none;
+      }
+
+      header .logo {
+        font-size: 1.5rem;
+      }
+
+      .pricing-grid {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .cta-button {
+        padding: 12px 24px;
+        font-size: 1rem;
+      }
+
+      .footer-nav a {
+        display: block;
+        margin: 10px 0;
+      }
+    }
+  </style>
 </head>
 <body>
+
+  <!-- Cursor Blob -->
+  <div id="cursorBlob"></div>
+
+  <!-- Navigation -->
   <header>
     <a class="logo" href="index.html">Ottomator</a>
     <nav>
       <a href="pricing.html">Pricing</a>
-      <a href="signup.html">Sign Up</a>
+      <a href="signup.html">Join Waitlist</a>
     </nav>
   </header>
 
+  <!-- Pricing Section -->
   <main class="pricing-container">
     <section class="pricing-header">
       <h1>Simple, Transparent Pricing</h1>
@@ -47,7 +263,7 @@
           <li>✓ Version history</li>
           <li>✓ Integration with 5+ tools</li>
         </ul>
-        <a href="signup.html" class="cta-button primary">Start Free Trial</a>
+        <a href="signup.html" class="cta-button">Start Free Trial</a>
       </div>
 
       <!-- Enterprise Plan -->
@@ -66,29 +282,28 @@
     </section>
   </main>
 
+  <!-- Footer -->
   <footer>
-    <div class="footer-container">
-      <p>Ottomator</p>
-      <p>Be the first to automate your SaaS ops without writing a single line of code. Onboard users, chase invoices, and scale effortlessly — all on autopilot.</p>
-      <nav>
-        <a href="waitlist.html">Join Waitlist</a>
-        <a href="contact.html">Contact</a>
-        <a href="terms.html">Terms</a>
-      </nav>
-      <p>© 2025 Ottomator. All rights reserved.</p>
+    <div class="footer-content">
+      <a href="index.html" class="footer-logo">Ottomator</a>
+      <div>
+        Be the first to automate your SaaS ops without writing a single line of code. Onboard users, chase invoices, and scale effortlessly — all on autopilot.
+      </div>
+      <div class="footer-nav">
+        <a href="signup.html">Join Waitlist</a>
+        <a href="#">Contact</a>
+        <a href="#">Terms</a>
+      </div>
+      <div class="footer-copy">&copy; 2025 Ottomator. All rights reserved.</div>
     </div>
   </footer>
 
-  <!-- Floating Blob Cursor Effect -->
-  <div class="floating-blob"></div>
-
+  <!-- Blob Script -->
   <script>
-    // Blob follows the cursor
-    const floatingBlob = document.querySelector('.floating-blob');
-    document.addEventListener('mousemove', (e) => {
-      const { clientX: x, clientY: y } = e;
-      floatingBlob.style.left = `${x}px`;
-      floatingBlob.style.top = `${y}px`;
+    const blob = document.getElementById("cursorBlob");
+    document.addEventListener("mousemove", (e) => {
+      blob.style.left = `${e.clientX - 125}px`;
+      blob.style.top = `${e.clientY - 125}px`;
     });
   </script>
 </body>
