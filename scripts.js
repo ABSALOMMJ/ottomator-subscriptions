@@ -18,19 +18,41 @@ document.addEventListener("DOMContentLoaded", () => {
             return;
         }
 
+        // Disable button and change text
         ctaButton.disabled = true;
         const originalText = ctaButton.innerText;
         ctaButton.innerText = "Submitting...";
         form.classList.add("submitting");
 
-        setTimeout(() => {
+        // Prepare the data to be sent
+        const formData = new FormData();
+        formData.append("fullName", nameVal);
+        formData.append("email", emailVal);
+        formData.append("password", passVal);
+
+        // Send data to Google Apps Script
+        fetch("https://script.google.com/macros/s/AKfycbzGdSk4faVTsZDJ5klOdis89ijr42Y6Hw0iigku_ZwmkqKHa4yiIhU2mUvm0Ost0dj1kA/exec", {
+            method: "POST",
+            body: formData
+        })
+        .then((response) => response.text())
+        .then((data) => {
+            console.log("Success:", data); // Handle success response
+
+            // Redirect to thank you page
+            window.location.href = "thankyou.html";
+        })
+        .catch((error) => {
+            console.error("Error:", error); // Handle error
+
+            // Re-enable button and reset text
             ctaButton.disabled = false;
             ctaButton.innerText = originalText;
             form.classList.remove("submitting");
 
-            // Redirect to thank you page
-            window.location.href = "thankyou.html";
-        }, 800);
+            // Show error message to the user
+            alert("There was an error submitting your form. Please try again.");
+        });
     });
 
     // Input focus styling
