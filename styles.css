@@ -187,3 +187,19 @@ button {
     font-weight: 600;
     cursor: pointer;
 }
+
+.floating-blob {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, rgba(99,102,241,0.4), rgba(59,130,246,0.2));
+    border-radius: 50%;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+    filter: blur(60px);
+    transition: transform 0.15s ease-out;
+}
+
