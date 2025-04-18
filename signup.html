@@ -6,154 +6,7 @@
   <title>Signup - Ottomator</title>
   <link rel="stylesheet" href="styles.css" />
   <style>
-    body {
-      font-family: 'Inter', sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #f9f9f9;
-    }
-
-    header {
-      position: sticky;
-      top: 0;
-      background: #fff;
-      padding: 15px 50px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      z-index: 10;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    header .logo {
-      font-family: 'Poppins', sans-serif;
-      font-size: 1.8rem;
-      color: #5c6bc0;
-      text-decoration: none;
-    }
-
-    header nav a {
-      margin-left: 30px;
-      color: #333;
-      text-decoration: none;
-      font-weight: 500;
-      transition: all 0.3s ease;
-    }
-
-    header nav a:hover {
-      color: #5c6bc0;
-      transform: scale(1.05);
-    }
-
-    .signup-container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-      padding: 0 20px;
-    }
-
-    .signup-form {
-      background: #fff;
-      padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-      width: 400px;
-      text-align: center;
-    }
-
-    .signup-form h1 {
-      font-size: 2rem;
-      margin-bottom: 20px;
-    }
-
-    .signup-form p {
-      font-size: 1.1rem;
-      color: #777;
-      margin-bottom: 30px;
-    }
-
-    .signup-form input {
-      width: 100%;
-      padding: 15px;
-      font-size: 1rem;
-      border: 1px solid #ddd;
-      border-radius: 8px;
-      margin-bottom: 15px;
-      transition: all 0.3s ease;
-    }
-
-    .signup-form input:focus {
-      border-color: #5c6bc0;
-      outline: none;
-    }
-
-    .cta-button {
-      background-color: #4a6ee0;
-      color: white;
-      padding: 15px 30px;
-      font-size: 1.1rem;
-      text-decoration: none;
-      border-radius: 50px;
-      font-weight: 600;
-      transition: all 0.3s ease;
-    }
-
-    .cta-button:hover {
-      background-color: #3a57c6;
-      transform: scale(1.05);
-    }
-
-    footer {
-      background: #f3f4f6;
-      padding: 40px 20px;
-      text-align: center;
-      font-size: 0.95rem;
-      color: #4b5563;
-      border-top: 1px solid #e5e7eb;
-    }
-
-    .footer-logo {
-      font-family: 'Poppins', sans-serif;
-      font-size: 1.6rem;
-      color: #4a6ee0;
-      text-decoration: none;
-      display: inline-block;
-      margin-bottom: 20px;
-    }
-
-    .footer-nav {
-      margin: 20px 0;
-    }
-
-    .footer-nav a {
-      margin: 0 15px;
-      color: #4b5563;
-      text-decoration: none;
-      font-weight: 500;
-    }
-
-    .footer-nav a:hover {
-      color: #5c6bc0;
-    }
-
-    .footer-copy {
-      margin-top: 20px;
-      color: #9ca3af;
-      font-size: 0.85rem;
-    }
-
-    @media screen and (max-width: 768px) {
-      .signup-form {
-        width: 100%;
-        padding: 20px;
-      }
-
-      .cta-button {
-        padding: 12px 24px;
-        font-size: 1rem;
-      }
-    }
+    /* Keep your styles as they are */
   </style>
 </head>
 <body>
@@ -169,13 +22,13 @@
 
   <!-- Signup Section -->
   <div class="signup-container">
-    <form class="signup-form">
+    <form class="signup-form" id="signupForm" method="POST" action="https://script.google.com/macros/s/AKfycbzGdSk4faVTsZDJ5klOdis89ijr42Y6Hw0iigku_ZwmkqKHa4yiIhU2mUvm0Ost0dj1kA/exec">
       <h1>Join Ottomator</h1>
       <p>Sign up to streamline your SaaS operations and join the future of automation.</p>
-      <input type="text" placeholder="Full Name" required />
-      <input type="email" placeholder="Email Address" required />
-      <input type="password" placeholder="Create Password" required />
-      <a href="#" class="cta-button">Sign Up</a>
+      <input type="text" name="fullName" placeholder="Full Name" required />
+      <input type="email" name="email" placeholder="Email Address" required />
+      <input type="password" name="password" placeholder="Create Password" required />
+      <button type="submit" class="cta-button">Sign Up</button>
     </form>
   </div>
 
@@ -189,6 +42,28 @@
     </div>
     <div class="footer-copy">&copy; 2025 Ottomator. All rights reserved.</div>
   </footer>
+
+  <script>
+    // Optional JavaScript to enhance form submission, like showing a loading spinner or success message
+    document.getElementById('signupForm').addEventListener('submit', function(event) {
+      event.preventDefault(); // Prevent the form from submitting traditionally
+      const formData = new FormData(this);
+
+      // Send data to Google Apps Script using Fetch API (optional, if you want a more controlled form submission)
+      fetch(this.action, {
+        method: 'POST',
+        body: formData
+      })
+      .then(response => response.text())
+      .then(data => {
+        alert('Signup successful!'); // You can replace this with a custom success message
+        // Optionally redirect to another page or clear the form
+      })
+      .catch(error => {
+        alert('There was an error. Please try again later.');
+      });
+    });
+  </script>
 
 </body>
 </html>
