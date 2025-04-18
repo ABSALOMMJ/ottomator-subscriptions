@@ -15,10 +15,18 @@
     </nav>
   </header>
 
-  <main class="form-container" style="text-align: center;">
-    <h2>🎉 Thanks for Signing Up!</h2>
+  <main class="thankyou-container">
+    <h2 class="thank-you-message">🎉 Thanks for Signing Up!</h2>
     <p>Please check your email to verify your account.</p>
     <a class="cta-button" href="index.html">Return to Homepage</a>
   </main>
+
+  <script>
+    // Simple Animation for the Thank You Message
+    document.addEventListener('DOMContentLoaded', () => {
+      const thankYouMessage = document.querySelector('.thank-you-message');
+      thankYouMessage.classList.add('fade-in');
+    });
+  </script>
 </body>
 </html>
