@@ -5,6 +5,7 @@ body {
     padding: 0;
     background-color: #f9fafb;
     color: #1f2937;
+    transition: background-color 0.3s ease;
 }
 
 /* Header Navigation */
@@ -15,6 +16,7 @@ header {
     padding: 20px 40px;
     background-color: white;
     box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    z-index: 10;
 }
 
 .logo {
@@ -36,6 +38,11 @@ nav a {
     text-decoration: none;
     color: #1f2937;
     font-weight: 500;
+    font-size: 1rem;
+}
+
+nav a:hover {
+    color: #3B82F6;
 }
 
 /* Hero Section */
@@ -55,6 +62,16 @@ nav a {
     box-shadow: 0 20px 40px rgba(59, 130, 246, 0.3);
 }
 
+.hero-box h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.hero-box p {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+}
+
 /* CTA Buttons */
 .cta-button {
     margin-top: 20px;
@@ -66,6 +83,7 @@ nav a {
     font-weight: 600;
     text-decoration: none;
     transition: background 0.3s ease;
+    border: 2px solid #3B82F6;
 }
 
 .cta-button:hover {
@@ -75,6 +93,7 @@ nav a {
 .cta-button.primary {
     background: linear-gradient(135deg, #4F46E5, #3B82F6);
     color: white;
+    border: none;
 }
 
 .cta-button.primary:hover {
@@ -85,6 +104,7 @@ nav a {
 .pricing-container {
     padding: 60px 20px;
     text-align: center;
+    background-color: #f9fafb;
 }
 
 .pricing-header h1 {
@@ -177,6 +197,7 @@ input {
     padding: 12px;
     border: 1px solid #d1d5db;
     border-radius: 8px;
+    font-size: 1rem;
 }
 
 button {
@@ -187,6 +208,7 @@ button {
     border-radius: 8px;
     font-weight: 600;
     cursor: pointer;
+    font-size: 1rem;
 }
 
 form.submitting button {
@@ -205,7 +227,48 @@ form.submitting button {
     border-radius: 50%;
     pointer-events: none;
     transform: translate(-50%, -50%);
-    z-index: 0;
+    z-index: -1;
     filter: blur(60px);
     transition: transform 0.15s ease-out;
+}
+
+/* Thank You Page Styling */
+.thank-you-container {
+    text-align: center;
+    margin-top: 60px;
+}
+
+.thank-you-container h2 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.thank-you-container p {
+    font-size: 1.2rem;
+    color: #6b7280;
+    margin-bottom: 40px;
+}
+
+.thank-you-container .cta-button {
+    background-color: #3B82F6;
+    color: white;
+    font-weight: 600;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .pricing-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero-box {
+        padding: 80px 20px;
+        margin: 20px;
+    }
+
+    .pricing-card {
+        width: 90%;
+        margin: 20px auto;
+    }
 }
