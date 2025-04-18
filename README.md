@@ -20,7 +20,7 @@ Onboard users, chase invoices, and scale operations effortlessly.
 
 ## Getting Started
 
-1. Sign up for an account at [Ottomator](https://www.ottomator.com).
+1. Sign up for an account at [Ottomator](https://ottomator.vercel.app/).
 2. Choose a pre-built template or start building your automation from scratch.
 3. Connect your favorite tools via simple integrations.
 4. Monitor automation performance in real-time and adjust as needed.
