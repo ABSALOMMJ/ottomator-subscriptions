@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
     form.addEventListener("submit", function (event) {
         event.preventDefault();
 
-        // Trimmed values
+        // Get values and trim
         const nameVal = fullName.value.trim();
         const emailVal = email.value.trim();
         const passVal = password.value.trim();
@@ -18,12 +18,12 @@ document.addEventListener("DOMContentLoaded", () => {
             return;
         }
 
-        // Optional: add a loading state here
+        // Optional: add 'submitting' class to form
         form.classList.add("submitting");
 
-        // Simulate a short delay before redirect
+        // Simulate short processing time
         setTimeout(() => {
             window.location.href = "thankyou.html";
-        }, 600); // 600ms for smoother transition
+        }, 600);
     });
 });
