@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Ottomator</title>
   <link rel="stylesheet" href="styles.css" />
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
   <style>
     body {
@@ -48,14 +49,6 @@
       transform: scale(1.05);
     }
 
-    main {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 80vh;
-      padding: 20px;
-    }
-
     .hero-box {
       display: flex;
       flex-direction: column;
@@ -64,11 +57,11 @@
       text-align: center;
       background: linear-gradient(135deg, #5c6bc0, #4a90e2);
       color: white;
-      padding: 60px 40px;
-      width: 100%;
-      max-width: 650px;
+      padding: 80px 20px;
+      margin: 80px auto;
       border-radius: 16px;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      max-width: 800px;
+      width: 90%;
     }
 
     .hero-box h1 {
@@ -101,14 +94,6 @@
       transform: scale(1.05);
     }
 
-    footer {
-      background-color: #f1f1f1;
-      text-align: center;
-      padding: 20px 10px;
-      font-size: 0.9rem;
-      color: #555;
-    }
-
     #cursorBlob {
       position: fixed;
       width: 250px;
@@ -120,6 +105,52 @@
       opacity: 0.45;
       z-index: 0;
       transition: top 0.2s ease, left 0.2s ease;
+    }
+
+    footer {
+      background: #f5f5f5;
+      padding: 60px 20px 30px;
+      font-size: 0.95rem;
+      color: #666;
+    }
+
+    .footer-content {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      text-align: center;
+    }
+
+    .footer-logo {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      font-size: 1.6rem;
+      color: #4a6ee0;
+      text-decoration: none;
+    }
+
+    .footer-nav {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin: 10px 0;
+    }
+
+    .footer-nav a {
+      color: #777;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .footer-nav a:hover {
+      color: #4a6ee0;
+    }
+
+    .footer-copy {
+      font-size: 0.85rem;
+      color: #999;
     }
 
     @media screen and (max-width: 768px) {
@@ -139,20 +170,13 @@
         padding: 10px 20px;
         font-size: 1rem;
       }
-
-      .hero-box {
-        padding: 40px 20px;
-        margin: 20px;
-      }
     }
   </style>
 </head>
 <body>
 
-  <!-- Cursor Blob -->
   <div id="cursorBlob"></div>
 
-  <!-- Navigation -->
   <header>
     <a class="logo" href="index.html">Ottomator</a>
     <nav>
@@ -161,7 +185,6 @@
     </nav>
   </header>
 
-  <!-- Hero Section -->
   <main>
     <section class="hero-box">
       <h1>Build Products Without Code</h1>
@@ -170,12 +193,21 @@
     </section>
   </main>
 
-  <!-- Footer -->
   <footer>
-    &copy; 2025 Ottomator. All rights reserved. | Made with ❤️ for creators worldwide.
+    <div class="footer-content">
+      <a href="index.html" class="footer-logo">Ottomator</a>
+      <div>Tools to build products fast — without touching code.</div>
+      <div class="footer-nav">
+        <a href="index.html">Home</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="signup.html">Sign Up</a>
+        <a href="#">Contact</a>
+        <a href="#">Terms</a>
+      </div>
+      <div class="footer-copy">&copy; 2025 Ottomator. All rights reserved.</div>
+    </div>
   </footer>
 
-  <!-- Blob Script -->
   <script>
     const blob = document.getElementById("cursorBlob");
     document.addEventListener("mousemove", (e) => {
