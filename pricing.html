@@ -5,82 +5,288 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Pricing - Ottomator</title>
   <link rel="stylesheet" href="styles.css" />
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    /* Add styles from homepage to maintain consistency */
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+      background: #f9f9f9;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      background: #fff;
+      padding: 15px 50px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      z-index: 10;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header .logo {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.8rem;
+      color: #5c6bc0;
+      text-decoration: none;
+    }
+
+    header nav a {
+      margin-left: 30px;
+      color: #333;
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+
+    header nav a:hover {
+      color: #5c6bc0;
+      transform: scale(1.05);
+    }
+
+    .pricing-container {
+      padding: 60px 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .pricing-header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .pricing-header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 15px;
+      font-weight: 600;
+    }
+
+    .pricing-header p {
+      font-size: 1.1rem;
+      color: #6b7280;
+    }
+
+    .pricing-grid {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      margin-top: 40px;
+    }
+
+    .pricing-card {
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      width: 30%;
+      padding: 30px;
+      text-align: center;
+    }
+
+    .pricing-card h3 {
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+      font-weight: 600;
+    }
+
+    .pricing-card .price {
+      font-size: 2.2rem;
+      font-weight: 600;
+      color: #4a6ee0;
+      margin-bottom: 20px;
+    }
+
+    .pricing-card .price span {
+      font-size: 1.1rem;
+      color: #6b7280;
+    }
+
+    .pricing-card ul {
+      list-style: none;
+      padding: 0;
+      margin-bottom: 30px;
+      text-align: left;
+    }
+
+    .pricing-card ul li {
+      font-size: 1.1rem;
+      margin-bottom: 10px;
+      color: #6b7280;
+    }
+
+    .cta-button {
+      background-color: #ffffff;
+      color: #4a6ee0;
+      padding: 15px 30px;
+      font-size: 1.1rem;
+      text-decoration: none;
+      border-radius: 50px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    }
+
+    .cta-button:hover {
+      background-color: #e0e7ff;
+      transform: scale(1.05);
+    }
+
+    .featured {
+      border: 2px solid #4a6ee0;
+      background-color: #e6f0ff;
+    }
+
+    /* Footer Styles */
+    footer {
+      background: #f3f4f6;
+      padding: 60px 20px;
+      text-align: center;
+      border-top: 1px solid #e5e7eb;
+      font-size: 0.95rem;
+      color: #4b5563;
+    }
+
+    .footer-content {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .footer-logo {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.6rem;
+      color: #4a6ee0;
+      text-decoration: none;
+      display: inline-block;
+      margin-bottom: 20px;
+    }
+
+    .footer-nav {
+      margin: 20px 0;
+    }
+
+    .footer-nav a {
+      margin: 0 15px;
+      color: #4b5563;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .footer-nav a:hover {
+      color: #5c6bc0;
+    }
+
+    .footer-copy {
+      margin-top: 20px;
+      color: #9ca3af;
+      font-size: 0.85rem;
+    }
+
+    /* Cursor Blob */
+    #cursorBlob {
+      position: fixed;
+      width: 250px;
+      height: 250px;
+      border-radius: 50%;
+      pointer-events: none;
+      background: radial-gradient(circle, #5c6bc0 0%, #4a90e2 100%);
+      filter: blur(100px);
+      opacity: 0.45;
+      z-index: 0;
+      transition: top 0.2s ease, left 0.2s ease;
+    }
+  </style>
 </head>
 <body>
+  <!-- Cursor Blob -->
+  <div id="cursorBlob"></div>
+
+  <!-- Navigation -->
   <header>
     <a class="logo" href="index.html">Ottomator</a>
     <nav>
       <a href="pricing.html">Pricing</a>
-      <a href="signup.html">Sign Up</a>
+      <a href="signup.html">Join Waitlist</a>
     </nav>
   </header>
 
+  <!-- Pricing Section -->
   <main class="pricing-container">
     <section class="pricing-header">
       <h1>Simple, Transparent Pricing</h1>
       <p>No hidden fees. Choose a plan that scales with your SaaS needs.</p>
-      <!-- Monthly/Yearly Toggle -->
-      <div class="pricing-toggle">
-        <label for="pricing-toggle">Toggle: </label>
-        <input type="checkbox" id="pricing-toggle" />
-        <span class="toggle-text">Monthly/Yearly</span>
-      </div>
     </section>
 
     <section class="pricing-grid">
       <!-- Basic Plan -->
       <div class="pricing-card">
         <h3>Basic</h3>
-        <p class="price">$9.99<span>/month</span></p>
+        <p class="price">$15<span>/month</span></p>
         <ul>
-          <li>✓ Unlimited product testing</li>
-          <li>✓ Up to 3 collaborators</li>
+          <li>✓ Up to 2 team members</li>
+          <li>✓ Basic automation templates</li>
           <li>✓ Community support</li>
-          <li>✓ Access to templates</li>
+          <li>✓ 5 integrations</li>
           <li>✓ Email updates</li>
         </ul>
-        <a href="signup.html" class="cta-button">Get Started</a>
+        <a href="signup.html" class="cta-button">Join Waitlist</a>
       </div>
 
       <!-- Pro Plan (Featured) -->
       <div class="pricing-card featured">
         <h3>Pro</h3>
-        <p class="price">$19.99<span>/month</span></p>
+        <p class="price">$49<span>/month</span></p>
         <ul>
           <li>✓ Unlimited team members</li>
-          <li>✓ Advanced analytics</li>
+          <li>✓ Advanced automation workflows</li>
           <li>✓ Priority support</li>
-          <li>✓ Version history</li>
-          <li>✓ Integration with 5+ tools</li>
+          <li>✓ 20+ integrations</li>
+          <li>✓ Analytics and reporting</li>
         </ul>
-        <a href="signup.html" class="cta-button primary">Start Free Trial</a>
+        <a href="signup.html" class="cta-button primary">Join Waitlist</a>
       </div>
 
       <!-- Enterprise Plan -->
       <div class="pricing-card">
         <h3>Enterprise</h3>
-        <p class="price">$49.99<span>/month</span></p>
+        <p class="price">$99<span>/month</span></p>
         <ul>
           <li>✓ Custom integrations</li>
-          <li>✓ Dedicated success manager</li>
-          <li>✓ Enterprise-grade security</li>
-          <li>✓ SLA & 24/7 Support</li>
-          <li>✓ Personalized onboarding</li>
+          <li>✓ Dedicated account manager</li>
+          <li>✓ Advanced security and encryption</li>
+          <li>✓ SLA & 24/7 support</li>
+          <li>✓ Tailored onboarding and training</li>
         </ul>
         <a href="signup.html" class="cta-button">Contact Us</a>
       </div>
     </section>
   </main>
 
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <a href="index.html" class="footer-logo">Ottomator</a>
+      <div>
+        Be the first to automate your SaaS ops without writing a single line of code. Onboard users, chase invoices, and scale effortlessly — all on autopilot.
+      </div>
+      <div class="footer-nav">
+        <a href="signup.html">Join Waitlist</a>
+        <a href="#">Contact</a>
+        <a href="#">Terms</a>
+      </div>
+      <div class="footer-copy">&copy; 2025 Ottomator. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <!-- Blob Script -->
   <script>
-    // Pricing toggle functionality
-    const toggle = document.getElementById('pricing-toggle');
-    toggle.addEventListener('change', () => {
-      const prices = document.querySelectorAll('.price');
-      prices.forEach(price => {
-        // Replace monthly with yearly pricing here (for demo, you can do this based on data)
-        price.innerHTML = price.innerHTML.includes('/month') ? price.innerHTML.replace('/month', '/year') : price.innerHTML.replace('/year', '/month');
-      });
+    const blob = document.getElementById("cursorBlob");
+    document.addEventListener("mousemove", (e) => {
+      blob.style.left = `${e.clientX - 125}px`;
+      blob.style.top = `${e.clientY - 125}px`;
     });
   </script>
 </body>
