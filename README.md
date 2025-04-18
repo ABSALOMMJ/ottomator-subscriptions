@@ -34,7 +34,7 @@ Onboard users, chase invoices, and scale operations effortlessly.
 
 ## Contact
 
-For support or inquiries, reach out to us at [support@ottomator.com](mailto:support@ottomator.com).
+For support or inquiries, reach out to us at [support.ottomator@gmail.com](mailto:support.ottomator@gmail.com).
 
 ---
 
