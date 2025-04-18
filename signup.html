@@ -7,189 +7,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
   <style>
-    body {
-      font-family: 'Inter', sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #f9f9f9;
-      overflow-x: hidden;
-    }
-
-    header {
-      position: sticky;
-      top: 0;
-      background: #fff;
-      padding: 15px 50px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      z-index: 10;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    header .logo {
-      font-family: 'Poppins', sans-serif;
-      font-size: 1.8rem;
-      color: #5c6bc0;
-      text-decoration: none;
-    }
-
-    header nav a {
-      margin-left: 30px;
-      color: #333;
-      text-decoration: none;
-      font-weight: 500;
-      transition: all 0.3s ease;
-    }
-
-    header nav a:hover {
-      color: #5c6bc0;
-      transform: scale(1.05);
-    }
-
-    .form-wrapper {
-      max-width: 500px;
-      margin: 100px auto;
-      background: #fff;
-      padding: 40px;
-      border-radius: 16px;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
-      position: relative;
-      z-index: 1;
-    }
-
-    .form-wrapper h2 {
-      text-align: center;
-      margin-bottom: 30px;
-      font-weight: 600;
-      font-family: 'Poppins', sans-serif;
-      color: #333;
-    }
-
-    form label {
-      display: block;
-      margin-top: 20px;
-      font-weight: 500;
-    }
-
-    form input {
-      width: 100%;
-      padding: 12px 15px;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      margin-top: 8px;
-      font-size: 1rem;
-    }
-
-    .strength-indicator {
-      margin-top: 10px;
-      font-weight: 500;
-    }
-
-    .strength-indicator.weak {
-      color: red;
-    }
-
-    .strength-indicator.medium {
-      color: orange;
-    }
-
-    .strength-indicator.strong {
-      color: green;
-    }
-
-    #submit-btn {
-      width: 100%;
-      background-color: #4a6ee0;
-      color: white;
-      padding: 14px;
-      font-size: 1rem;
-      font-weight: 600;
-      border: none;
-      border-radius: 8px;
-      margin-top: 30px;
-      cursor: pointer;
-      transition: all 0.3s ease;
-    }
-
-    #submit-btn:hover {
-      background-color: #3d5bd7;
-      transform: scale(1.02);
-    }
-
-    #cursorBlob {
-      position: fixed;
-      width: 250px;
-      height: 250px;
-      border-radius: 50%;
-      pointer-events: none;
-      background: radial-gradient(circle, #5c6bc0 0%, #4a90e2 100%);
-      filter: blur(100px);
-      opacity: 0.45;
-      z-index: 0;
-      transition: top 0.2s ease, left 0.2s ease;
-    }
-
-    footer {
-      background: #f3f4f6;
-      padding: 60px 20px;
-      text-align: center;
-      border-top: 1px solid #e5e7eb;
-      font-size: 0.95rem;
-      color: #4b5563;
-      margin-top: 100px;
-    }
-
-    .footer-content {
-      max-width: 800px;
-      margin: 0 auto;
-    }
-
-    .footer-logo {
-      font-family: 'Poppins', sans-serif;
-      font-size: 1.6rem;
-      color: #4a6ee0;
-      text-decoration: none;
-      display: inline-block;
-      margin-bottom: 20px;
-    }
-
-    .footer-nav {
-      margin: 20px 0;
-    }
-
-    .footer-nav a {
-      margin: 0 15px;
-      color: #4b5563;
-      text-decoration: none;
-      font-weight: 500;
-    }
-
-    .footer-nav a:hover {
-      color: #5c6bc0;
-    }
-
-    .footer-copy {
-      margin-top: 20px;
-      color: #9ca3af;
-      font-size: 0.85rem;
-    }
-
-    @media screen and (max-width: 768px) {
-      header nav {
-        display: none;
-      }
-
-      .form-wrapper {
-        margin: 60px 20px;
-        padding: 30px;
-      }
-
-      .footer-nav a {
-        display: block;
-        margin: 10px 0;
-      }
-    }
+    /* Your existing styles here */
   </style>
 </head>
 <body>
@@ -210,7 +28,7 @@
   <main>
     <div class="form-wrapper">
       <h2>Create Your Account</h2>
-      <form id="signup-form" action="thankyou.html" method="POST">
+      <form id="signup-form">
         <label for="full-name">Full Name</label>
         <input type="text" id="full-name" name="full-name" placeholder="Your full name" required>
 
@@ -266,8 +84,29 @@
       strengthIndicator.className = 'strength-indicator ' + strength.toLowerCase();
     });
 
-    // Form Validation
+    // Form Submission via Google Apps Script
     const form = document.getElementById('signup-form');
+    const scriptURL = "https://script.google.com/macros/s/AKfycbzGdSk4faVTsZDJ5klOdis89ijr42Y6Hw0iigku_ZwmkqKHa4yiIhU2mUvm0Ost0dj1kA/exec";
+    
+    form.addEventListener("submit", async function(e) {
+      e.preventDefault();
+      
+      // Prepare form data
+      const formData = new FormData(form);
+
+      try {
+        // Send data to Google Apps Script
+        await fetch(scriptURL, { method: "POST", body: formData });
+
+        // After successful submission, redirect to Thank You page
+        window.location.href = "thankyou.html";
+      } catch (error) {
+        alert("There was an error! Please try again.");
+        console.error("Error!", error.message);
+      }
+    });
+
+    // Form Validation
     form.addEventListener('submit', function (e) {
       if (!form.checkValidity()) {
         e.preventDefault();
@@ -275,5 +114,6 @@
       }
     });
   </script>
+
 </body>
 </html>
