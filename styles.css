@@ -6,6 +6,7 @@ body {
     color: #1f2937;
 }
 
+/* Header Navigation */
 header {
     display: flex;
     justify-content: space-between;
@@ -36,6 +37,7 @@ nav a {
     font-weight: 500;
 }
 
+/* Hero Section */
 .hero-box {
     background: linear-gradient(135deg, #3B82F6, #6366F1);
     color: white;
@@ -52,6 +54,7 @@ nav a {
     box-shadow: 0 20px 40px rgba(59, 130, 246, 0.3);
 }
 
+/* CTA Buttons */
 .cta-button {
     margin-top: 20px;
     display: inline-block;
@@ -61,64 +64,98 @@ nav a {
     border-radius: 8px;
     font-weight: 600;
     text-decoration: none;
+    transition: background 0.3s ease;
 }
 
-.pricing-section {
+.cta-button:hover {
+    background-color: #e0e7ff;
+}
+
+.cta-button.primary {
+    background: linear-gradient(135deg, #4F46E5, #3B82F6);
+    color: white;
+}
+
+.cta-button.primary:hover {
+    opacity: 0.95;
+}
+
+/* Pricing Page Layout */
+.pricing-container {
     padding: 60px 20px;
     text-align: center;
 }
 
-.pricing-cards {
+.pricing-header h1 {
+    font-size: 2.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.pricing-header p {
+    font-size: 1.1rem;
+    color: #6b7280;
+    margin-bottom: 40px;
+}
+
+.pricing-grid {
     display: flex;
-    justify-content: center;
-    gap: 20px;
     flex-wrap: wrap;
-    margin-top: 40px;
+    justify-content: center;
+    gap: 2rem;
 }
 
-.card {
+.pricing-card {
     background: white;
-    border-radius: 12px;
-    padding: 20px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
-    width: 280px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+    border-radius: 16px;
+    padding: 30px 24px;
+    width: 300px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
     border: 2px solid transparent;
-}
-
-.card:hover {
-    transform: translateY(-8px);
-    border-image: linear-gradient(135deg, #6366F1, #3B82F6) 1;
-    box-shadow: 0 8px 24px rgba(59, 130, 246, 0.2);
-}
-
-.card h3 {
-    margin-top: 0;
-    font-size: 1.3rem;
-}
-
-.card ul {
-    list-style: none;
-    padding: 0;
-    margin-top: 16px;
     text-align: left;
 }
 
-.card ul li {
-    margin-bottom: 8px;
+.pricing-card:hover {
+    transform: translateY(-6px);
+    border-image: linear-gradient(135deg, #6366F1, #3B82F6) 1;
+    box-shadow: 0 12px 30px rgba(59, 130, 246, 0.15);
+}
+
+.pricing-card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+}
+
+.pricing-card .price {
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 10px 0 20px;
+    color: #3B82F6;
+}
+
+.pricing-card .price span {
+    font-size: 1rem;
+    font-weight: 400;
+    color: #6b7280;
+}
+
+.pricing-card ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+.pricing-card ul li {
+    margin-bottom: 10px;
     font-size: 0.95rem;
 }
 
 .featured {
     border: 2px solid #3B82F6;
-    background: linear-gradient(135deg, #EFF6FF, #FFFFFF);
+    background-color: #f0f4ff;
 }
 
-.price {
-    font-size: 1.2rem;
-    color: #3B82F6;
-}
-
+/* Form Styling */
 .form-container {
     max-width: 400px;
     margin: 60px auto;
@@ -126,6 +163,7 @@ nav a {
     background-color: white;
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    text-align: center;
 }
 
 form {
