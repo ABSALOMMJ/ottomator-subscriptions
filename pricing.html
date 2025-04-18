@@ -67,11 +67,29 @@
   </main>
 
   <footer>
-    <!-- Include footer content here, similar to your homepage footer -->
+    <div class="footer-container">
+      <p>Ottomator</p>
+      <p>Be the first to automate your SaaS ops without writing a single line of code. Onboard users, chase invoices, and scale effortlessly — all on autopilot.</p>
+      <nav>
+        <a href="waitlist.html">Join Waitlist</a>
+        <a href="contact.html">Contact</a>
+        <a href="terms.html">Terms</a>
+      </nav>
+      <p>© 2025 Ottomator. All rights reserved.</p>
+    </div>
   </footer>
 
+  <!-- Floating Blob Cursor Effect -->
+  <div class="floating-blob"></div>
+
   <script>
-    // Remove the toggle functionality since it was not required
+    // Blob follows the cursor
+    const floatingBlob = document.querySelector('.floating-blob');
+    document.addEventListener('mousemove', (e) => {
+      const { clientX: x, clientY: y } = e;
+      floatingBlob.style.left = `${x}px`;
+      floatingBlob.style.top = `${y}px`;
+    });
   </script>
 </body>
 </html>
