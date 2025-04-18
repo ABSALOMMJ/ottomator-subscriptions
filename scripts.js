@@ -8,40 +8,40 @@ document.addEventListener("DOMContentLoaded", () => {
     form.addEventListener("submit", function (event) {
         event.preventDefault();
 
-        // Get values and trim
         const nameVal = fullName.value.trim();
         const emailVal = email.value.trim();
         const passVal = password.value.trim();
 
-        // Basic validation
         if (!nameVal || !emailVal || !passVal) {
             alert("Please fill in all the fields.");
             return;
         }
 
-        // Optional: add 'submitting' class to form
         form.classList.add("submitting");
-
-        // Disable the CTA button while submitting
         ctaButton.disabled = true;
+        const originalText = ctaButton.innerText;
+        ctaButton.innerText = "Submitting...";
 
-        // Simulate short processing time
         setTimeout(() => {
-            // Reset the button after submission
             ctaButton.disabled = false;
-
-            // Redirect to the thank you page
+            ctaButton.innerText = originalText;
+            form.classList.remove("submitting");
             window.location.href = "thankyou.html";
-        }, 600);
+        }, 800);
     });
 
-    // Optional: Focus effect on inputs
-    [fullName, email, password].forEach(input => {
+    const inputs = [fullName, email, password];
+
+    inputs.forEach(input => {
         input.addEventListener("focus", () => {
-            input.style.borderColor = "#3B82F6"; // Highlight border
+            input.style.borderColor = "#3B82F6";
+            input.style.boxShadow = "0 0 0 3px rgba(59,130,246,0.2)";
+            input.style.outline = "none";
         });
+
         input.addEventListener("blur", () => {
-            input.style.borderColor = "#d1d5db"; // Revert to original
+            input.style.borderColor = "#d1d5db";
+            input.style.boxShadow = "none";
         });
     });
 });
