@@ -1,27 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ottomator</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ottomator</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-    <div class="floating-blob" id="blob"></div>
+  <!-- Interactive Floating Blob -->
+  <div class="floating-blob" id="blob"></div>
 
-    <header>
-        <a class="logo" href="index.html">Ottomator</a>
-        <nav>
-            <a href="pricing.html">Pricing</a>
-            <a href="signup.html">Sign Up</a>
-        </nav>
-    </header>
-    <main>
-        <section class="hero-box">
-            <h1>Build Products Without Code</h1>
-            <p>Get access to powerful no-code tools with flexible pricing plans.</p>
-            <a class="cta-button" href="signup.html">Sign Up Now</a>
-        </section>
-    </main>
+  <!-- Navigation -->
+  <header>
+    <a class="logo" href="index.html">Ottomator</a>
+    <nav>
+      <a href="pricing.html">Pricing</a>
+      <a href="signup.html">Sign Up</a>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <main>
+    <section class="hero-box">
+      <h1>Build Products Without Code</h1>
+      <p>Get access to powerful no-code tools with flexible pricing plans.</p>
+      <a class="cta-button" href="signup.html">Sign Up Now</a>
+    </section>
+  </main>
+
+  <!-- Floating Blob JS -->
+  <script>
+    const blob = document.getElementById("blob");
+    document.addEventListener("mousemove", (e) => {
+      const { clientX, clientY } = e;
+      blob.style.transform = `translate(${clientX}px, ${clientY}px)`;
+    });
+  </script>
 </body>
 </html>
