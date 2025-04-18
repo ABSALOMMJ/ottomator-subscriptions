@@ -17,8 +17,14 @@
 
   <main class="pricing-container">
     <section class="pricing-header">
-      <h1>Simple, transparent pricing</h1>
+      <h1>Simple, Transparent Pricing</h1>
       <p>No hidden fees. Choose a plan that scales with your SaaS needs.</p>
+      <!-- Monthly/Yearly Toggle -->
+      <div class="pricing-toggle">
+        <label for="pricing-toggle">Toggle: </label>
+        <input type="checkbox" id="pricing-toggle" />
+        <span class="toggle-text">Monthly/Yearly</span>
+      </div>
     </section>
 
     <section class="pricing-grid">
@@ -36,7 +42,7 @@
         <a href="signup.html" class="cta-button">Get Started</a>
       </div>
 
-      <!-- Pro Plan -->
+      <!-- Pro Plan (Featured) -->
       <div class="pricing-card featured">
         <h3>Pro</h3>
         <p class="price">$19.99<span>/month</span></p>
@@ -65,5 +71,17 @@
       </div>
     </section>
   </main>
+
+  <script>
+    // Pricing toggle functionality
+    const toggle = document.getElementById('pricing-toggle');
+    toggle.addEventListener('change', () => {
+      const prices = document.querySelectorAll('.price');
+      prices.forEach(price => {
+        // Replace monthly with yearly pricing here (for demo, you can do this based on data)
+        price.innerHTML = price.innerHTML.includes('/month') ? price.innerHTML.replace('/month', '/year') : price.innerHTML.replace('/year', '/month');
+      });
+    });
+  </script>
 </body>
 </html>
