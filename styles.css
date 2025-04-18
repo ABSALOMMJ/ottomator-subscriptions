@@ -1,3 +1,4 @@
+/* Base Styles */
 body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
@@ -188,6 +189,12 @@ button {
     cursor: pointer;
 }
 
+form.submitting button {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+/* Floating Blob Animation */
 .floating-blob {
     position: fixed;
     top: 0;
@@ -202,4 +209,3 @@ button {
     filter: blur(60px);
     transition: transform 0.15s ease-out;
 }
-
