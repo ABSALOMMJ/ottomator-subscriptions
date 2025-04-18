@@ -21,7 +21,7 @@ header {
     background: linear-gradient(90deg, #4F46E5, #3B82F6);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    text-decoration: none; /* ensure link has no underline */
+    text-decoration: none;
     display: inline-block;
 }
 
@@ -81,11 +81,37 @@ nav a {
     border-radius: 12px;
     padding: 20px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.05);
-    width: 250px;
+    width: 280px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    border-image: linear-gradient(135deg, #6366F1, #3B82F6) 1;
+    box-shadow: 0 8px 24px rgba(59, 130, 246, 0.2);
+}
+
+.card h3 {
+    margin-top: 0;
+    font-size: 1.3rem;
+}
+
+.card ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 16px;
+    text-align: left;
+}
+
+.card ul li {
+    margin-bottom: 8px;
+    font-size: 0.95rem;
 }
 
 .featured {
     border: 2px solid #3B82F6;
+    background: linear-gradient(135deg, #EFF6FF, #FFFFFF);
 }
 
 .price {
