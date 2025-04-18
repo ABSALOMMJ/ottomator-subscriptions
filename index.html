@@ -23,6 +23,9 @@
       padding: 15px 50px;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
       z-index: 10;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
 
     header .logo {
@@ -30,10 +33,6 @@
       font-size: 1.8rem;
       color: #5c6bc0;
       text-decoration: none;
-    }
-
-    header nav {
-      float: right;
     }
 
     header nav a {
@@ -50,18 +49,14 @@
     }
 
     .hero-box {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
+      max-width: 720px;
+      margin: 100px auto;
       text-align: center;
       background: linear-gradient(135deg, #5c6bc0, #4a90e2);
       color: white;
-      padding: 80px 20px;
-      margin: 80px auto;
-      border-radius: 16px;
-      max-width: 800px;
-      width: 90%;
+      padding: 80px 40px;
+      border-radius: 20px;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
     }
 
     .hero-box h1 {
@@ -75,6 +70,8 @@
       margin-bottom: 40px;
       font-weight: 400;
       max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     .cta-button {
@@ -108,49 +105,47 @@
     }
 
     footer {
-      background: #f5f5f5;
-      padding: 60px 20px 30px;
+      background: #f3f4f6;
+      padding: 60px 20px;
+      text-align: center;
+      border-top: 1px solid #e5e7eb;
       font-size: 0.95rem;
-      color: #666;
+      color: #4b5563;
     }
 
     .footer-content {
-      max-width: 1000px;
+      max-width: 800px;
       margin: 0 auto;
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-      text-align: center;
     }
 
     .footer-logo {
       font-family: 'Poppins', sans-serif;
-      font-weight: 600;
       font-size: 1.6rem;
       color: #4a6ee0;
       text-decoration: none;
+      display: inline-block;
+      margin-bottom: 20px;
     }
 
     .footer-nav {
-      display: flex;
-      justify-content: center;
-      gap: 30px;
-      margin: 10px 0;
+      margin: 20px 0;
     }
 
     .footer-nav a {
-      color: #777;
+      margin: 0 15px;
+      color: #4b5563;
       text-decoration: none;
-      transition: all 0.3s ease;
+      font-weight: 500;
     }
 
     .footer-nav a:hover {
-      color: #4a6ee0;
+      color: #5c6bc0;
     }
 
     .footer-copy {
+      margin-top: 20px;
+      color: #9ca3af;
       font-size: 0.85rem;
-      color: #999;
     }
 
     @media screen and (max-width: 768px) {
@@ -167,40 +162,48 @@
       }
 
       .cta-button {
-        padding: 10px 20px;
+        padding: 12px 24px;
         font-size: 1rem;
+      }
+
+      .footer-nav a {
+        display: block;
+        margin: 10px 0;
       }
     }
   </style>
 </head>
 <body>
 
+  <!-- Cursor Blob -->
   <div id="cursorBlob"></div>
 
+  <!-- Navigation -->
   <header>
     <a class="logo" href="index.html">Ottomator</a>
     <nav>
-      <a href="pricing.html">Pricing</a>
-      <a href="signup.html">Sign Up</a>
+      <a href="signup.html">Join Waitlist</a>
     </nav>
   </header>
 
+  <!-- Hero Section -->
   <main>
     <section class="hero-box">
       <h1>Build Products Without Code</h1>
       <p>Get access to powerful no-code tools with flexible pricing plans.</p>
-      <a class="cta-button" href="signup.html">Sign Up Now</a>
+      <a class="cta-button" href="signup.html">Join Waitlist</a>
     </section>
   </main>
 
+  <!-- Footer -->
   <footer>
     <div class="footer-content">
       <a href="index.html" class="footer-logo">Ottomator</a>
-      <div>Tools to build products fast — without touching code.</div>
+      <div>
+        Be the first to automate your SaaS ops without writing a single line of code. Onboard users, chase invoices, and scale effortlessly — all on autopilot.
+      </div>
       <div class="footer-nav">
-        <a href="index.html">Home</a>
-        <a href="pricing.html">Pricing</a>
-        <a href="signup.html">Sign Up</a>
+        <a href="signup.html">Join Waitlist</a>
         <a href="#">Contact</a>
         <a href="#">Terms</a>
       </div>
@@ -208,6 +211,7 @@
     </div>
   </footer>
 
+  <!-- Blob Script -->
   <script>
     const blob = document.getElementById("cursorBlob");
     document.addEventListener("mousemove", (e) => {
