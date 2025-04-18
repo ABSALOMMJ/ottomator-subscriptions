@@ -5,10 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Ottomator</title>
   <link rel="stylesheet" href="styles.css" />
-  <!-- Link to Google Fonts -->
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
   <style>
-    /* Add your custom CSS here */
     body {
       font-family: 'Inter', sans-serif;
       margin: 0;
@@ -17,7 +16,6 @@
       background: #f9f9f9;
     }
 
-    /* Sticky Navbar */
     header {
       position: sticky;
       top: 0;
@@ -51,7 +49,6 @@
       transform: scale(1.05);
     }
 
-    /* Hero Section */
     .hero-box {
       display: flex;
       flex-direction: column;
@@ -60,9 +57,10 @@
       text-align: center;
       background: linear-gradient(135deg, #5c6bc0, #4a90e2);
       color: white;
-      padding: 100px 20px;
+      padding: 120px 20px;
       min-height: 100vh;
       position: relative;
+      z-index: 1;
     }
 
     .hero-box h1 {
@@ -78,37 +76,36 @@
     }
 
     .cta-button {
-      background-color: #ff4081;
-      color: white;
+      background-color: #ffffff;
+      color: #4a6ee0;
       padding: 15px 30px;
-      font-size: 1.2rem;
+      font-size: 1.1rem;
       text-decoration: none;
       border-radius: 50px;
+      font-weight: 600;
       transition: all 0.3s ease;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
     }
 
     .cta-button:hover {
-      background-color: #e2356f;
-      transform: scale(1.1);
+      background-color: #e0e7ff;
+      transform: scale(1.05);
     }
 
-    /* Floating Blob */
-    .floating-blob {
-      position: absolute;
-      background-color: rgba(255, 64, 129, 0.2);
-      width: 100px;
-      height: 100px;
+    /* Cursor-Following Gradient Blob */
+    #cursorBlob {
+      position: fixed;
+      width: 250px;
+      height: 250px;
       border-radius: 50%;
-      animation: float 3s ease-in-out infinite;
+      pointer-events: none;
+      background: radial-gradient(circle, #5c6bc0 0%, #4a90e2 100%);
+      filter: blur(100px);
+      opacity: 0.3;
+      z-index: 0;
+      transition: top 0.2s ease, left 0.2s ease;
     }
 
-    @keyframes float {
-      0% { transform: translateY(0); }
-      50% { transform: translateY(-20px); }
-      100% { transform: translateY(0); }
-    }
-
-    /* Responsive */
     @media screen and (max-width: 768px) {
       header nav {
         display: none;
@@ -124,13 +121,15 @@
 
       .cta-button {
         padding: 10px 20px;
+        font-size: 1rem;
       }
     }
   </style>
 </head>
 <body>
-  <!-- Interactive Floating Blob -->
-  <div class="floating-blob" id="blob"></div>
+
+  <!-- Cursor Blob -->
+  <div id="cursorBlob"></div>
 
   <!-- Navigation -->
   <header>
@@ -150,12 +149,12 @@
     </section>
   </main>
 
-  <!-- Floating Blob JS -->
+  <!-- Blob Script -->
   <script>
-    const blob = document.getElementById("blob");
+    const blob = document.getElementById("cursorBlob");
     document.addEventListener("mousemove", (e) => {
-      const { clientX, clientY } = e;
-      blob.style.transform = `translate(${clientX - 50}px, ${clientY - 50}px)`; // Center the blob on cursor
+      blob.style.left = `${e.clientX - 125}px`;
+      blob.style.top = `${e.clientY - 125}px`;
     });
   </script>
 </body>
