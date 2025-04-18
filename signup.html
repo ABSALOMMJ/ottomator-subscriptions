@@ -17,14 +17,57 @@
 
   <main class="form-container">
     <h2>Create Your Account</h2>
-    <form id="signup-form">
-      <input type="text" placeholder="Full Name" required />
-      <input type="email" placeholder="Email" required />
-      <input type="password" placeholder="Password" required />
-      <button type="submit">Create Account</button>
+    <form id="signup-form" action="thankyou.html" method="POST">
+      <!-- Full Name Input -->
+      <label for="full-name">Full Name</label>
+      <input type="text" id="full-name" name="full-name" placeholder="Full Name" required />
+
+      <!-- Email Input -->
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" placeholder="Email" required />
+
+      <!-- Password Input -->
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" placeholder="Password" required />
+
+      <!-- Password Strength Indicator -->
+      <div id="password-strength" class="strength-indicator"></div>
+
+      <!-- Submit Button -->
+      <button type="submit" id="submit-btn">Create Account</button>
     </form>
   </main>
 
   <script src="scripts.js"></script>
+
+  <script>
+    // Password Strength Indicator Script
+    const passwordField = document.getElementById('password');
+    const strengthIndicator = document.getElementById('password-strength');
+
+    passwordField.addEventListener('input', () => {
+      const password = passwordField.value;
+      let strength = 'Weak';
+      if (password.length > 8) {
+        strength = 'Medium';
+      }
+      if (password.length > 12) {
+        strength = 'Strong';
+      }
+
+      strengthIndicator.textContent = strength;
+      strengthIndicator.classList.remove('weak', 'medium', 'strong');
+      strengthIndicator.classList.add(strength.toLowerCase());
+    });
+
+    // Form Validation
+    const form = document.getElementById('signup-form');
+    form.addEventListener('submit', function (e) {
+      if (!form.checkValidity()) {
+        e.preventDefault();
+        alert('Please fill out the form correctly.');
+      }
+    });
+  </script>
 </body>
 </html>
