@@ -3,19 +3,162 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Sign Up - Ottomator</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <title>Signup - Ottomator</title>
   <link rel="stylesheet" href="styles.css" />
   <style>
-    /* Existing CSS (no changes here) */
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f9f9f9;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      background: #fff;
+      padding: 15px 50px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      z-index: 10;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header .logo {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.8rem;
+      color: #5c6bc0;
+      text-decoration: none;
+    }
+
+    header nav a {
+      margin-left: 30px;
+      color: #333;
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+
+    header nav a:hover {
+      color: #5c6bc0;
+      transform: scale(1.05);
+    }
+
+    .signup-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 0 20px;
+    }
+
+    .signup-form {
+      background: #fff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      width: 400px;
+      text-align: center;
+    }
+
+    .signup-form h1 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+
+    .signup-form p {
+      font-size: 1.1rem;
+      color: #777;
+      margin-bottom: 30px;
+    }
+
+    .signup-form input {
+      width: 100%;
+      padding: 15px;
+      font-size: 1rem;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      margin-bottom: 15px;
+      transition: all 0.3s ease;
+    }
+
+    .signup-form input:focus {
+      border-color: #5c6bc0;
+      outline: none;
+    }
+
+    .cta-button {
+      background-color: #4a6ee0;
+      color: white;
+      padding: 15px 30px;
+      font-size: 1.1rem;
+      text-decoration: none;
+      border-radius: 50px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    .cta-button:hover {
+      background-color: #3a57c6;
+      transform: scale(1.05);
+    }
+
+    footer {
+      background: #f3f4f6;
+      padding: 40px 20px;
+      text-align: center;
+      font-size: 0.95rem;
+      color: #4b5563;
+      border-top: 1px solid #e5e7eb;
+    }
+
+    .footer-logo {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.6rem;
+      color: #4a6ee0;
+      text-decoration: none;
+      display: inline-block;
+      margin-bottom: 20px;
+    }
+
+    .footer-nav {
+      margin: 20px 0;
+    }
+
+    .footer-nav a {
+      margin: 0 15px;
+      color: #4b5563;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .footer-nav a:hover {
+      color: #5c6bc0;
+    }
+
+    .footer-copy {
+      margin-top: 20px;
+      color: #9ca3af;
+      font-size: 0.85rem;
+    }
+
+    @media screen and (max-width: 768px) {
+      .signup-form {
+        width: 100%;
+        padding: 20px;
+      }
+
+      .cta-button {
+        padding: 12px 24px;
+        font-size: 1rem;
+      }
+    }
   </style>
 </head>
 <body>
 
-  <!-- Cursor Blob -->
-  <div id="cursorBlob"></div>
-
-  <!-- Header -->
+  <!-- Navigation -->
   <header>
     <a class="logo" href="index.html">Ottomator</a>
     <nav>
@@ -24,90 +167,28 @@
     </nav>
   </header>
 
-  <!-- Signup Form -->
-  <main>
-    <div class="form-wrapper">
-      <h2>Create Your Account</h2>
-      <form id="signup-form" action="YOUR_WEB_APP_URL" method="POST">
-        <label for="full-name">Full Name</label>
-        <input type="text" id="full-name" name="full-name" placeholder="Your full name" required>
-
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" placeholder="Your email address" required>
-
-        <label for="password">Password</label>
-        <input type="password" id="password" name="password" placeholder="Create a password" required>
-
-        <div id="password-strength" class="strength-indicator"></div>
-
-        <button type="submit" id="submit-btn">Create Account</button>
-      </form>
-    </div>
-  </main>
+  <!-- Signup Section -->
+  <div class="signup-container">
+    <form class="signup-form">
+      <h1>Join Ottomator</h1>
+      <p>Sign up to streamline your SaaS operations and join the future of automation.</p>
+      <input type="text" placeholder="Full Name" required />
+      <input type="email" placeholder="Email Address" required />
+      <input type="password" placeholder="Create Password" required />
+      <a href="#" class="cta-button">Sign Up</a>
+    </form>
+  </div>
 
   <!-- Footer -->
   <footer>
-    <div class="footer-content">
-      <a href="index.html" class="footer-logo">Ottomator</a>
-      <div>
-        Be the first to automate your SaaS ops without writing a single line of code. Onboard users, chase invoices, and scale effortlessly — all on autopilot.
-      </div>
-      <div class="footer-nav">
-        <a href="signup.html">Join Waitlist</a>
-        <a href="#">Contact</a>
-        <a href="#">Terms</a>
-      </div>
-      <div class="footer-copy">&copy; 2025 Ottomator. All rights reserved.</div>
+    <a href="index.html" class="footer-logo">Ottomator</a>
+    <div class="footer-nav">
+      <a href="signup.html">Join Waitlist</a>
+      <a href="#">Contact</a>
+      <a href="#">Terms</a>
     </div>
+    <div class="footer-copy">&copy; 2025 Ottomator. All rights reserved.</div>
   </footer>
 
-  <!-- Scripts -->
-  <script>
-    // Cursor Blob Animation
-    const blob = document.getElementById("cursorBlob");
-    document.addEventListener("mousemove", (e) => {
-      blob.style.left = `${e.clientX - 125}px`;
-      blob.style.top = `${e.clientY - 125}px`;
-    });
-
-    // Password Strength Indicator
-    const passwordField = document.getElementById('password');
-    const strengthIndicator = document.getElementById('password-strength');
-
-    passwordField.addEventListener('input', () => {
-      const password = passwordField.value;
-      let strength = 'Weak';
-      if (password.length > 8) strength = 'Medium';
-      if (password.length > 12) strength = 'Strong';
-
-      strengthIndicator.textContent = strength;
-      strengthIndicator.className = 'strength-indicator ' + strength.toLowerCase();
-    });
-
-    // Form Submission Handling
-    const form = document.getElementById('signup-form');
-    form.addEventListener('submit', function (e) {
-      e.preventDefault();  // Prevent form submission until we process the form
-
-      const formData = new FormData(form);
-      fetch(form.action, {
-        method: 'POST',
-        body: formData
-      })
-      .then(response => response.json())
-      .then(data => {
-        // On success, redirect to the thank you page
-        if (data.result === "success") {
-          window.location.href = "thankyou.html";
-        } else {
-          alert('There was an error with your submission. Please try again.');
-        }
-      })
-      .catch(error => {
-        console.error('Error:', error);
-        alert('An error occurred. Please try again later.');
-      });
-    });
-  </script>
 </body>
 </html>
