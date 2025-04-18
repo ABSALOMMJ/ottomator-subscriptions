@@ -2,20 +2,17 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Signup | Ottomator</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sign Up - Ottomator</title>
   <link rel="stylesheet" href="styles.css" />
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
   <style>
+    /* Include any additional styling for the signup page to match the index page style */
     body {
       font-family: 'Inter', sans-serif;
+      background: #f9f9f9;
       margin: 0;
       padding: 0;
-      overflow-x: hidden;
-      background: #f9f9f9;
     }
-
     header {
       position: sticky;
       top: 0;
@@ -27,14 +24,12 @@
       justify-content: space-between;
       align-items: center;
     }
-
     header .logo {
       font-family: 'Poppins', sans-serif;
       font-size: 1.8rem;
       color: #5c6bc0;
       text-decoration: none;
     }
-
     header nav a {
       margin-left: 30px;
       color: #333;
@@ -42,182 +37,71 @@
       font-weight: 500;
       transition: all 0.3s ease;
     }
-
     header nav a:hover {
       color: #5c6bc0;
       transform: scale(1.05);
     }
-
-    /* Signup Form */
-    .signup-box {
+    .form-container {
       max-width: 720px;
-      margin: 80px auto;
-      padding: 40px;
+      margin: 100px auto;
+      text-align: center;
       background: linear-gradient(135deg, #5c6bc0, #4a90e2);
       color: white;
+      padding: 80px 40px;
       border-radius: 20px;
       box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
     }
-
-    .signup-box h1 {
+    .form-container h1 {
       font-size: 2.5rem;
       margin-bottom: 20px;
       font-weight: 600;
-      text-align: center;
     }
-
-    .signup-box p {
-      font-size: 1.2rem;
-      margin-bottom: 40px;
-      font-weight: 400;
-      max-width: 600px;
-      margin-left: auto;
-      margin-right: auto;
-      text-align: center;
-    }
-
-    .input-field {
+    .form-container input {
       width: 100%;
       padding: 15px;
-      margin: 10px 0;
-      font-size: 1rem;
-      border-radius: 10px;
+      font-size: 1.1rem;
+      margin-bottom: 20px;
       border: none;
+      border-radius: 10px;
       outline: none;
-      background-color: #f1f5f9;
-      color: #333;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
-
-    .input-field:focus {
-      background-color: #fff;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-    }
-
-    .submit-btn {
+    .cta-button {
       background-color: #ffffff;
       color: #4a6ee0;
       padding: 15px 30px;
       font-size: 1.1rem;
+      text-decoration: none;
       border-radius: 50px;
       font-weight: 600;
       transition: all 0.3s ease;
-      border: none;
-      cursor: pointer;
-      width: 100%;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
     }
-
-    .submit-btn:hover {
+    .cta-button:hover {
       background-color: #e0e7ff;
       transform: scale(1.05);
-    }
-
-    footer {
-      background: #f3f4f6;
-      padding: 60px 20px;
-      text-align: center;
-      border-top: 1px solid #e5e7eb;
-      font-size: 0.95rem;
-      color: #4b5563;
-    }
-
-    .footer-content {
-      max-width: 800px;
-      margin: 0 auto;
-    }
-
-    .footer-logo {
-      font-family: 'Poppins', sans-serif;
-      font-size: 1.6rem;
-      color: #4a6ee0;
-      text-decoration: none;
-      display: inline-block;
-      margin-bottom: 20px;
-    }
-
-    .footer-nav {
-      margin: 20px 0;
-    }
-
-    .footer-nav a {
-      margin: 0 15px;
-      color: #4b5563;
-      text-decoration: none;
-      font-weight: 500;
-    }
-
-    .footer-nav a:hover {
-      color: #5c6bc0;
-    }
-
-    .footer-copy {
-      margin-top: 20px;
-      color: #9ca3af;
-      font-size: 0.85rem;
-    }
-
-    @media screen and (max-width: 768px) {
-      header nav {
-        display: none;
-      }
-
-      header .logo {
-        font-size: 1.5rem;
-      }
-
-      .signup-box {
-        margin-top: 50px;
-        padding: 30px;
-      }
-
-      .signup-box h1 {
-        font-size: 2rem;
-      }
-
-      .submit-btn {
-        padding: 12px 24px;
-        font-size: 1rem;
-      }
-
-      .footer-nav a {
-        display: block;
-        margin: 10px 0;
-      }
     }
   </style>
 </head>
 <body>
-
-  <!-- Cursor Blob -->
-  <div id="cursorBlob"></div>
-
-  <!-- Navigation -->
   <header>
     <a class="logo" href="index.html">Ottomator</a>
     <nav>
       <a href="pricing.html">Pricing</a>
-      <a href="signup.html">Join Waitlist</a>
+      <a href="signup.html">Sign Up</a>
     </nav>
   </header>
 
-  <!-- Signup Section -->
   <main>
-    <section class="signup-box">
-      <h1>Sign Up for Ottomator</h1>
-      <p>Get early access to the most powerful no-code automation platform for SaaS businesses.</p>
-
-      <!-- Signup Form -->
-      <form action="YOUR_GOOGLE_APPS_SCRIPT_URL" method="POST">
-        <input type="text" name="fullName" placeholder="Full Name" class="input-field" required />
-        <input type="email" name="email" placeholder="Email Address" class="input-field" required />
-        <input type="password" name="password" placeholder="Password" class="input-field" required />
-        <button type="submit" class="submit-btn">Join Waitlist</button>
+    <section class="form-container">
+      <h1>Sign Up</h1>
+      <form action="thankyou.html" method="get">
+        <input type="email" name="email" placeholder="Enter your email" required />
+        <input type="password" name="password" placeholder="Create a password" required />
+        <button type="submit" class="cta-button">Join Waitlist</button>
       </form>
     </section>
   </main>
 
-  <!-- Footer -->
   <footer>
     <div class="footer-content">
       <a href="index.html" class="footer-logo">Ottomator</a>
@@ -232,14 +116,5 @@
       <div class="footer-copy">&copy; 2025 Ottomator. All rights reserved.</div>
     </div>
   </footer>
-
-  <!-- Blob Script -->
-  <script>
-    const blob = document.getElementById("cursorBlob");
-    document.addEventListener("mousemove", (e) => {
-      blob.style.left = `${e.clientX - 125}px`;
-      blob.style.top = `${e.clientY - 125}px`;
-    });
-  </script>
 </body>
 </html>
