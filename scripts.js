@@ -30,7 +30,7 @@ formData.append("fullName", nameVal);
 formData.append("email", emailVal);
 formData.append("password", passVal);
 
-fetch("https://script.google.com/macros/s/AKfycbz.../exec", {
+fetch("https://script.google.com/macros/s/AKfycbzGdSk4faVTsZDJ5klOdis89ijr42Y6Hw0iigku_ZwmkqKHa4yiIhU2mUvm0Ost0dj1kA/exec", {
     method: "POST",
     body: formData
 })
