@@ -26,15 +26,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // Prepare the data to be sent
         const formData = new FormData();
-        formData.append("fullName", nameVal);
-        formData.append("email", emailVal);
-        formData.append("password", passVal);
+formData.append("fullName", nameVal);
+formData.append("email", emailVal);
+formData.append("password", passVal);
 
-        // Send data to Google Apps Script
-        fetch("https://script.google.com/macros/s/AKfycbzGdSk4faVTsZDJ5klOdis89ijr42Y6Hw0iigku_ZwmkqKHa4yiIhU2mUvm0Ost0dj1kA/exec", {
-            method: "POST",
-            body: formData
-        })
+fetch("https://script.google.com/macros/s/AKfycbz.../exec", {
+    method: "POST",
+    body: formData
+})
+
         .then((response) => response.text())
         .then((data) => {
             console.log("Success:", data); // Handle success response
