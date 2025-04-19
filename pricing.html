@@ -2,16 +2,15 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Pricing - Ottomator</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sign Up - Ottomator</title>
   <link rel="stylesheet" href="styles.css" />
   <style>
     body {
       font-family: 'Inter', sans-serif;
+      background: #f9f9f9;
       margin: 0;
       padding: 0;
-      overflow-x: hidden;
-      background: #f9f9f9;
     }
 
     header {
@@ -46,65 +45,31 @@
       transform: scale(1.05);
     }
 
-    .pricing-container {
-      padding: 60px 20px;
+    .form-container {
+      max-width: 720px;
+      margin: 100px auto;
       text-align: center;
+      background: linear-gradient(135deg, #5c6bc0, #4a90e2);
+      color: white;
+      padding: 80px 40px;
+      border-radius: 20px;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
     }
 
-    .pricing-header h1 {
+    .form-container h1 {
       font-size: 2.5rem;
       margin-bottom: 20px;
-    }
-
-    .pricing-header p {
-      font-size: 1.2rem;
-      margin-bottom: 40px;
-      font-weight: 400;
-      max-width: 600px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .pricing-grid {
-      display: flex;
-      justify-content: center;
-      gap: 40px;
-      margin-top: 40px;
-    }
-
-    .pricing-card {
-      background: #fff;
-      padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-      width: 300px;
-    }
-
-    .pricing-card h3 {
-      font-size: 1.5rem;
-      margin-bottom: 20px;
-    }
-
-    .pricing-card .price {
-      font-size: 1.6rem;
       font-weight: 600;
+    }
+
+    .form-container input {
+      width: 100%;
+      padding: 15px;
+      font-size: 1.1rem;
       margin-bottom: 20px;
-    }
-
-    .pricing-card .price span {
-      font-size: 1rem;
-      color: #777;
-    }
-
-    .pricing-card ul {
-      text-align: left;
-      margin-bottom: 30px;
-    }
-
-    .pricing-card ul li {
-      margin-bottom: 10px;
-      font-size: 1rem;
-      font-weight: 400;
+      border: none;
+      border-radius: 10px;
+      outline: none;
     }
 
     .cta-button {
@@ -122,28 +87,6 @@
     .cta-button:hover {
       background-color: #e0e7ff;
       transform: scale(1.05);
-    }
-
-    .featured .cta-button {
-      background-color: #4a6ee0;
-      color: white;
-    }
-
-    .featured .cta-button:hover {
-      background-color: #3a57c6;
-    }
-
-    #cursorBlob {
-      position: fixed;
-      width: 250px;
-      height: 250px;
-      border-radius: 50%;
-      pointer-events: none;
-      background: radial-gradient(circle, #5c6bc0 0%, #4a90e2 100%);
-      filter: blur(100px);
-      opacity: 0.45;
-      z-index: 0;
-      transition: top 0.2s ease, left 0.2s ease;
     }
 
     footer {
@@ -199,11 +142,6 @@
         font-size: 1.5rem;
       }
 
-      .pricing-grid {
-        flex-direction: column;
-        align-items: center;
-      }
-
       .cta-button {
         padding: 12px 24px;
         font-size: 1rem;
@@ -218,10 +156,6 @@
 </head>
 <body>
 
-  <!-- Cursor Blob -->
-  <div id="cursorBlob"></div>
-
-  <!-- Navigation -->
   <header>
     <a class="logo" href="index.html">Ottomator</a>
     <nav>
@@ -230,59 +164,17 @@
     </nav>
   </header>
 
-  <!-- Pricing Section -->
-  <main class="pricing-container">
-    <section class="pricing-header">
-      <h1>Simple, Transparent Pricing</h1>
-      <p>No hidden fees. Choose a plan that scales with your SaaS needs.</p>
-    </section>
-
-    <section class="pricing-grid">
-      <!-- Basic Plan -->
-      <div class="pricing-card">
-        <h3>Basic</h3>
-        <p class="price">$9.99<span>/month</span></p>
-        <ul>
-          <li>✓ Unlimited product testing</li>
-          <li>✓ Up to 3 collaborators</li>
-          <li>✓ Community support</li>
-          <li>✓ Access to templates</li>
-          <li>✓ Email updates</li>
-        </ul>
-        <a href="signup.html" class="cta-button">Get Started</a>
-      </div>
-
-      <!-- Pro Plan (Featured) -->
-      <div class="pricing-card featured">
-        <h3>Pro</h3>
-        <p class="price">$19.99<span>/month</span></p>
-        <ul>
-          <li>✓ Unlimited team members</li>
-          <li>✓ Advanced analytics</li>
-          <li>✓ Priority support</li>
-          <li>✓ Version history</li>
-          <li>✓ Integration with 5+ tools</li>
-        </ul>
-        <a href="signup.html" class="cta-button">Start Free Trial</a>
-      </div>
-
-      <!-- Enterprise Plan -->
-      <div class="pricing-card">
-        <h3>Enterprise</h3>
-        <p class="price">$49.99<span>/month</span></p>
-        <ul>
-          <li>✓ Custom integrations</li>
-          <li>✓ Dedicated success manager</li>
-          <li>✓ Enterprise-grade security</li>
-          <li>✓ SLA & 24/7 Support</li>
-          <li>✓ Personalized onboarding</li>
-        </ul>
-        <a href="signup.html" class="cta-button">Contact Us</a>
-      </div>
+  <main>
+    <section class="form-container">
+      <h1>Sign Up</h1>
+      <form action="thankyou.html" method="get">
+        <input type="email" name="email" placeholder="Enter your email" required />
+        <input type="password" name="password" placeholder="Create a password" required />
+        <button type="submit" class="cta-button">Join Waitlist</button>
+      </form>
     </section>
   </main>
 
-  <!-- Footer -->
   <footer>
     <div class="footer-content">
       <a href="index.html" class="footer-logo">Ottomator</a>
@@ -298,13 +190,5 @@
     </div>
   </footer>
 
-  <!-- Blob Script -->
-  <script>
-    const blob = document.getElementById("cursorBlob");
-    document.addEventListener("mousemove", (e) => {
-      blob.style.left = `${e.clientX - 125}px`;
-      blob.style.top = `${e.clientY - 125}px`;
-    });
-  </script>
 </body>
 </html>
