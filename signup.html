@@ -127,6 +127,47 @@
       transform: scale(1.05);
     }
 
+    footer {
+      background: #2d3e50;
+      padding: 80px 20px 40px;
+      color: #fff;
+      text-align: center;
+    }
+
+    .footer-content {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .footer-logo {
+      font-family: 'Poppins', sans-serif;
+      font-size: 2rem;
+      color: #5c6bc0;
+      text-decoration: none;
+      margin-bottom: 30px;
+    }
+
+    .footer-nav {
+      margin: 30px 0;
+    }
+
+    .footer-nav a {
+      margin: 0 20px;
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .footer-nav a:hover {
+      color: #5c6bc0;
+    }
+
+    .footer-copy {
+      margin-top: 30px;
+      color: #9ca3af;
+      font-size: 0.85rem;
+    }
+
     @media screen and (max-width: 768px) {
       .signup-section {
         padding: 80px 20px;
@@ -141,6 +182,10 @@
         left: -200px;
         width: 600px;
         height: 600px;
+      }
+
+      footer {
+        padding: 60px 20px 30px;
       }
     }
   </style>
@@ -172,13 +217,10 @@
     </section>
   </main>
 
-  <!-- Footer -->
   <footer>
     <div class="footer-content">
       <a href="index.html" class="footer-logo">Ottomator</a>
-      <div>
-        Be the first to automate your SaaS ops without writing a single line of code. Onboard users, chase invoices, and scale effortlessly — all on autopilot.
-      </div>
+      <p>Be the first to automate your SaaS ops without writing a single line of code. Onboard users, chase invoices, and scale effortlessly — all on autopilot.</p>
       <div class="footer-nav">
         <a href="signup.html">Join Waitlist</a>
         <a href="#">Contact</a>
@@ -187,15 +229,6 @@
       <div class="footer-copy">&copy; 2025 Ottomator. All rights reserved.</div>
     </div>
   </footer>
-
-  <!-- Blob Script -->
-  <script>
-    const blob = document.getElementById("cursorBlob");
-    document.addEventListener("mousemove", (e) => {
-      blob.style.left = `${e.clientX - 125}px`;
-      blob.style.top = `${e.clientY - 125}px`;
-    });
-  </script>
 
 </body>
 </html>
