@@ -7,7 +7,6 @@
   <link rel="stylesheet" href="styles.css" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
   <style>
-    /* Styles remain unchanged – same as previous version */
     body {
       font-family: 'Inter', sans-serif;
       margin: 0;
@@ -92,18 +91,24 @@
       gap: 20px;
     }
 
-    .form-content input {
+    .form-content input, .form-content textarea {
       padding: 16px;
       font-size: 1rem;
       border: 1px solid #e0e7ff;
       border-radius: 8px;
       background: #f9f9f9;
-      transition: border-color 0.3s ease;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
       outline: none;
     }
 
-    .form-content input:focus {
+    .form-content input:focus, .form-content textarea:focus {
       border-color: #5c6bc0;
+      box-shadow: 0 0 10px rgba(92, 107, 192, 0.2);
+    }
+
+    .form-content textarea {
+      resize: vertical;
+      height: 120px;
     }
 
     .form-content .cta-button {
@@ -212,16 +217,15 @@
         <div class="form-content">
           <h1>Join Ottomator</h1>
           <form action="https://formspree.io/f/xdkeqkba" method="POST">
-            
             <label>
-              Your name:
-              <textarea name="Name" required></textarea>
-            </label>
-           <label>
               Your email:
               <input type="email" name="email" required />
             </label>
-            <button type="submit">Send</button>
+            <label>
+              Your message:
+              <textarea name="message" required></textarea>
+            </label>
+            <button type="submit" class="cta-button">Send</button>
           </form>
         </div>
       </div>
