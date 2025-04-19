@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // Prepare the data to be sent
         const formData = new FormData();
-formData.append("fullName", nameVal);
+formData.append("name", nameVal);
 formData.append("email", emailVal);
 formData.append("password", passVal);
 
