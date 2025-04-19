@@ -128,32 +128,35 @@
     }
 
     footer {
-      background: #2d3e50;
-      padding: 80px 20px 40px;
-      color: #fff;
+      background: #f3f4f6;
+      padding: 60px 20px;
       text-align: center;
+      border-top: 1px solid #e5e7eb;
+      font-size: 0.95rem;
+      color: #4b5563;
     }
 
     .footer-content {
-      max-width: 1100px;
+      max-width: 800px;
       margin: 0 auto;
     }
 
     .footer-logo {
       font-family: 'Poppins', sans-serif;
-      font-size: 2rem;
-      color: #5c6bc0;
+      font-size: 1.6rem;
+      color: #4a6ee0;
       text-decoration: none;
-      margin-bottom: 30px;
+      display: inline-block;
+      margin-bottom: 20px;
     }
 
     .footer-nav {
-      margin: 30px 0;
+      margin: 20px 0;
     }
 
     .footer-nav a {
-      margin: 0 20px;
-      color: #ffffff;
+      margin: 0 15px;
+      color: #4b5563;
       text-decoration: none;
       font-weight: 500;
     }
@@ -163,7 +166,7 @@
     }
 
     .footer-copy {
-      margin-top: 30px;
+      margin-top: 20px;
       color: #9ca3af;
       font-size: 0.85rem;
     }
@@ -220,7 +223,9 @@
   <footer>
     <div class="footer-content">
       <a href="index.html" class="footer-logo">Ottomator</a>
-      <p>Be the first to automate your SaaS ops without writing a single line of code. Onboard users, chase invoices, and scale effortlessly — all on autopilot.</p>
+      <div>
+        Be the first to automate your SaaS ops without writing a single line of code. Onboard users, chase invoices, and scale effortlessly — all on autopilot.
+      </div>
       <div class="footer-nav">
         <a href="signup.html">Join Waitlist</a>
         <a href="#">Contact</a>
@@ -230,5 +235,16 @@
     </div>
   </footer>
 
+  <!-- Cursor Blob -->
+  <div id="cursorBlob"></div>
+
+  <!-- Blob Script -->
+  <script>
+    const blob = document.getElementById("cursorBlob");
+    document.addEventListener("mousemove", (e) => {
+      blob.style.left = `${e.clientX - 125}px`;
+      blob.style.top = `${e.clientY - 125}px`;
+    });
+  </script>
 </body>
 </html>
