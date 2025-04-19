@@ -5,9 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Ottomator - Join Waitlist</title>
   <link rel="stylesheet" href="styles.css" />
-  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
   <style>
+    /* Styles remain unchanged – same as previous version */
     body {
       font-family: 'Inter', sans-serif;
       margin: 0;
@@ -198,7 +198,6 @@
 </head>
 <body>
 
-  <!-- Navigation -->
   <header>
     <a class="logo" href="index.html">Ottomator</a>
     <nav>
@@ -212,7 +211,7 @@
       <div class="form-wrapper">
         <div class="form-content">
           <h1>Join Ottomator</h1>
-          <form method="POST" action="https://script.google.com/macros/s/AKfycbzGdSk4faVTsZDJ5klOdis89ijr42Y6Hw0iigku_ZwmkqKHa4yiIhU2mUvm0Ost0dj1kA/exec">
+          <form id="waitlistForm">
             <input type="text" name="name" placeholder="Enter your full name" required />
             <input type="email" name="email" placeholder="Enter your email" required />
             <input type="password" name="password" placeholder="Create a password" required />
@@ -223,7 +222,6 @@
     </section>
   </main>
 
-  <!-- Footer -->
   <footer>
     <div class="footer-content">
       <a href="index.html" class="footer-logo">Ottomator</a>
@@ -238,6 +236,30 @@
       <div class="footer-copy">&copy; 2025 Ottomator. All rights reserved.</div>
     </div>
   </footer>
+
+  <script>
+    document.getElementById('waitlistForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const form = e.target;
+      const formData = new FormData(form);
+      
+      fetch('https://script.google.com/macros/s/AKfycbzGdSk4faVTsZDJ5klOdis89ijr42Y6Hw0iigku_ZwmkqKHa4yiIhU2mUvm0Ost0dj1kA/exec', {
+        method: 'POST',
+        body: formData
+      })
+      .then(response => {
+        if (response.ok) {
+          window.location.href = 'thankyou.html';
+        } else {
+          alert('Something went wrong. Please try again.');
+        }
+      })
+      .catch(error => {
+        console.error('Error!', error.message);
+        alert('Something went wrong. Please try again.');
+      });
+    });
+  </script>
 
 </body>
 </html>
