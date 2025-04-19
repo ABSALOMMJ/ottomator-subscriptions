@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Ottomator</title>
+  <title>Ottomator - Join Waitlist</title>
   <link rel="stylesheet" href="styles.css" />
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
@@ -48,60 +48,73 @@
       transform: scale(1.05);
     }
 
-    .hero-box {
-      max-width: 720px;
-      margin: 100px auto;
+    .signup-section {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background: #f9f9f9;
+      padding: 20px;
+    }
+
+    .form-wrapper {
+      background: white;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      max-width: 450px;
+      width: 100%;
       text-align: center;
-      background: linear-gradient(135deg, #5c6bc0, #4a90e2);
-      color: white;
-      padding: 80px 40px;
-      border-radius: 20px;
-      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
     }
 
-    .hero-box h1 {
-      font-size: 2.5rem;
-      margin-bottom: 20px;
+    .form-content h1 {
+      font-size: 2rem;
       font-weight: 600;
+      color: #333;
+      margin-bottom: 20px;
     }
 
-    .hero-box p {
-      font-size: 1.2rem;
-      margin-bottom: 40px;
-      font-weight: 400;
-      max-width: 600px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .cta-button {
-      background-color: #ffffff;
-      color: #4a6ee0;
-      padding: 15px 30px;
+    .form-content .form-subtext {
       font-size: 1.1rem;
-      text-decoration: none;
-      border-radius: 50px;
+      color: #777;
+      margin-bottom: 30px;
+    }
+
+    .form-content form {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .form-content input {
+      padding: 15px;
+      font-size: 1rem;
+      border: 1px solid #e0e7ff;
+      border-radius: 8px;
+      background: #f9f9f9;
+      transition: border-color 0.3s ease;
+    }
+
+    .form-content input:focus {
+      border-color: #5c6bc0;
+      outline: none;
+    }
+
+    .form-content .cta-button {
+      background-color: #5c6bc0;
+      color: white;
+      padding: 15px;
+      font-size: 1.1rem;
+      border-radius: 8px;
       font-weight: 600;
       transition: all 0.3s ease;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+      cursor: pointer;
     }
 
-    .cta-button:hover {
-      background-color: #e0e7ff;
+    .form-content .cta-button:hover {
+      background-color: #4a90e2;
       transform: scale(1.05);
-    }
-
-    #cursorBlob {
-      position: fixed;
-      width: 250px;
-      height: 250px;
-      border-radius: 50%;
-      pointer-events: none;
-      background: radial-gradient(circle, #5c6bc0 0%, #4a90e2 100%);
-      filter: blur(100px);
-      opacity: 0.45;
-      z-index: 0;
-      transition: top 0.2s ease, left 0.2s ease;
     }
 
     footer {
@@ -157,12 +170,16 @@
         font-size: 1.5rem;
       }
 
-      .hero-box h1 {
-        font-size: 2rem;
+      .form-wrapper {
+        padding: 30px;
       }
 
-      .cta-button {
-        padding: 12px 24px;
+      .form-content h1 {
+        font-size: 1.8rem;
+      }
+
+      .form-content .cta-button {
+        padding: 12px;
         font-size: 1rem;
       }
 
@@ -175,9 +192,6 @@
 </head>
 <body>
 
-  <!-- Cursor Blob -->
-  <div id="cursorBlob"></div>
-
   <!-- Navigation -->
   <header>
     <a class="logo" href="index.html">Ottomator</a>
@@ -187,9 +201,8 @@
     </nav>
   </header>
 
-    <main>
+  <main>
     <section class="signup-section">
-      <div class="blob-background" id="blob"></div>
       <div class="form-wrapper">
         <div class="form-content">
           <h1>Join Ottomator</h1>
@@ -220,13 +233,5 @@
     </div>
   </footer>
 
-  <!-- Blob Script -->
-  <script>
-    const blob = document.getElementById("cursorBlob");
-    document.addEventListener("mousemove", (e) => {
-      blob.style.left = `${e.clientX - 125}px`;
-      blob.style.top = `${e.clientY - 125}px`;
-    });
-  </script>
 </body>
 </html>
