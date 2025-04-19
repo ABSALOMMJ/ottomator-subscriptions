@@ -300,11 +300,11 @@
 
   <!-- Blob Script -->
   <script>
-    const blob = document.getElementById("cursorBlob");
-    document.addEventListener("mousemove", (e) => {
-      blob.style.left = ${e.clientX - 125}px;
-      blob.style.top = ${e.clientY - 125}px;
-    });
-  </script>
+  const blob = document.getElementById("cursorBlob");
+  document.addEventListener("mousemove", (e) => {
+    blob.style.left = `${e.clientX - 125}px`;
+    blob.style.top = `${e.clientY - 125}px`;
+  });
+</script>
 </body>
 </html>
