@@ -45,31 +45,69 @@
       transform: scale(1.05);
     }
 
-    .form-container {
-      max-width: 720px;
-      margin: 100px auto;
-      text-align: center;
-      background: linear-gradient(135deg, #5c6bc0, #4a90e2);
-      color: white;
-      padding: 80px 40px;
+    .signup-section {
+      position: relative;
+      padding: 120px 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #f9f9f9;
+      overflow: hidden;
+    }
+
+    .blob-background {
+      position: absolute;
+      top: -100px;
+      left: -150px;
+      width: 900px;
+      height: 900px;
+      background: radial-gradient(circle at 30% 30%, #5c6bc0, #4a90e2);
+      border-radius: 50%;
+      z-index: 0;
+      opacity: 0.15;
+      filter: blur(100px);
+    }
+
+    .form-wrapper {
+      position: relative;
+      z-index: 1;
+      background: white;
+      padding: 60px 40px;
       border-radius: 20px;
       box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+      max-width: 600px;
+      width: 100%;
+      text-align: center;
     }
 
-    .form-container h1 {
-      font-size: 2.5rem;
-      margin-bottom: 20px;
-      font-weight: 600;
+    .form-wrapper h1 {
+      font-size: 2.2rem;
+      margin-bottom: 10px;
+      font-weight: 700;
+      color: #4a6ee0;
     }
 
-    .form-container input {
+    .form-subtext {
+      color: #6b7280;
+      font-size: 1rem;
+      margin-bottom: 30px;
+    }
+
+    .form-wrapper input {
       width: 100%;
       padding: 15px;
-      font-size: 1.1rem;
+      font-size: 1.05rem;
       margin-bottom: 20px;
-      border: none;
+      border: 1px solid #e5e7eb;
       border-radius: 10px;
       outline: none;
+      background: #f3f4f6;
+      transition: border-color 0.3s ease;
+    }
+
+    .form-wrapper input:focus {
+      border-color: #4a6ee0;
+      background: white;
     }
 
     .cta-button {
@@ -89,67 +127,20 @@
       transform: scale(1.05);
     }
 
-    footer {
-      background: #f3f4f6;
-      padding: 60px 20px;
-      text-align: center;
-      border-top: 1px solid #e5e7eb;
-      font-size: 0.95rem;
-      color: #4b5563;
-    }
-
-    .footer-content {
-      max-width: 800px;
-      margin: 0 auto;
-    }
-
-    .footer-logo {
-      font-family: 'Poppins', sans-serif;
-      font-size: 1.6rem;
-      color: #4a6ee0;
-      text-decoration: none;
-      display: inline-block;
-      margin-bottom: 20px;
-    }
-
-    .footer-nav {
-      margin: 20px 0;
-    }
-
-    .footer-nav a {
-      margin: 0 15px;
-      color: #4b5563;
-      text-decoration: none;
-      font-weight: 500;
-    }
-
-    .footer-nav a:hover {
-      color: #5c6bc0;
-    }
-
-    .footer-copy {
-      margin-top: 20px;
-      color: #9ca3af;
-      font-size: 0.85rem;
-    }
-
     @media screen and (max-width: 768px) {
-      header nav {
-        display: none;
+      .signup-section {
+        padding: 80px 20px;
       }
 
-      header .logo {
-        font-size: 1.5rem;
+      .form-wrapper {
+        padding: 40px 20px;
       }
 
-      .cta-button {
-        padding: 12px 24px;
-        font-size: 1rem;
-      }
-
-      .footer-nav a {
-        display: block;
-        margin: 10px 0;
+      .blob-background {
+        top: -200px;
+        left: -200px;
+        width: 600px;
+        height: 600px;
       }
     }
   </style>
@@ -165,13 +156,19 @@
   </header>
 
   <main>
-    <section class="form-container">
-      <h1>Sign Up</h1>
-      <form action="thankyou.html" method="get">
-        <input type="email" name="email" placeholder="Enter your email" required />
-        <input type="password" name="password" placeholder="Create a password" required />
-        <button type="submit" class="cta-button">Join Waitlist</button>
-      </form>
+    <section class="signup-section">
+      <div class="blob-background"></div>
+      <div class="form-wrapper">
+        <div class="form-content">
+          <h1>Join Ottomator</h1>
+          <p class="form-subtext">Automate your SaaS ops — without code.</p>
+          <form action="thankyou.html" method="get">
+            <input type="email" name="email" placeholder="Enter your email" required />
+            <input type="password" name="password" placeholder="Create a password" required />
+            <button type="submit" class="cta-button">Join Waitlist</button>
+          </form>
+        </div>
+      </div>
     </section>
   </main>
 
