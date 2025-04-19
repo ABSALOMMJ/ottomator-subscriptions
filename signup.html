@@ -238,27 +238,26 @@
   </footer>
 
   <script>
-    document.getElementById('waitlistForm').addEventListener('submit', function(e) {
-      e.preventDefault();
-      const form = e.target;
-      const formData = new FormData(form);
-      
-      fetch('https://script.google.com/macros/s/AKfycbzGdSk4faVTsZDJ5klOdis89ijr42Y6Hw0iigku_ZwmkqKHa4yiIhU2mUvm0Ost0dj1kA/exec', {
-        method: 'POST',
-        body: formData
-      })
-      .then(response => {
-        if (response.ok) {
-          window.location.href = 'thankyou.html';
-        } else {
-          alert('Something went wrong. Please try again.');
-        }
-      })
-      .catch(error => {
-        console.error('Error!', error.message);
-        alert('Something went wrong. Please try again.');
-      });
-    });
+document.getElementById('waitlistForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  const form = e.target;
+  const formData = new FormData(form);
+
+  fetch('https://script.google.com/macros/s/AKfycbzGdSk4faVTsZDJ5klOdis89ijr42Y6Hw0iigku_ZwmkqKHa4yiIhU2mUvm0Ost0dj1kA/exec', {
+    method: 'POST',
+    body: formData,
+    mode: 'no-cors' // <-- key fix
+  })
+  .then(() => {
+    // Google Apps Script won't return JSON with no-cors, so we just redirect
+    window.location.href = 'thankyou.html';
+  })
+  .catch(error => {
+    console.error('Error!', error.message);
+    alert('Something went wrong. Please try again.');
+  });
+});
+
   </script>
 
 </body>
