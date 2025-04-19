@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
     const form = document.querySelector("form");
-    const fullName = document.querySelector("input[type='text']");
+    const name = document.querySelector("input[type='text']");
     const email = document.querySelector("input[type='email']");
     const password = document.querySelector("input[type='password']");
     const ctaButton = document.querySelector(".cta-button");
@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
     form.addEventListener("submit", (event) => {
         event.preventDefault();
 
-        const nameVal = fullName.value.trim();
+        const nameVal = name.value.trim();
         const emailVal = email.value.trim();
         const passVal = password.value.trim();
 
@@ -56,7 +56,7 @@ fetch("https://script.google.com/macros/s/AKfycbzGdSk4faVTsZDJ5klOdis89ijr42Y6Hw
     });
 
     // Input focus styling
-    [fullName, email, password].forEach((input) => {
+    [name, email, password].forEach((input) => {
         input.addEventListener("focus", () => {
             input.style.borderColor = "#3B82F6";
             input.style.boxShadow = "0 0 0 3px rgba(59,130,246,0.2)";
