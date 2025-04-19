@@ -211,11 +211,16 @@
       <div class="form-wrapper">
         <div class="form-content">
           <h1>Join Ottomator</h1>
-          <form id="waitlistForm">
-            <input type="text" name="name" placeholder="Enter your full name" required />
-            <input type="email" name="email" placeholder="Enter your email" required />
-            <input type="password" name="password" placeholder="Create a password" required />
-            <button type="submit" class="cta-button">Join Waitlist</button>
+          <form action="https://formspree.io/f/xdkeqkba" method="POST">
+            <label>
+              Your email:
+              <input type="email" name="email" required />
+            </label>
+            <label>
+              Your message:
+              <textarea name="message" required></textarea>
+            </label>
+            <button type="submit">Send</button>
           </form>
         </div>
       </div>
@@ -236,29 +241,6 @@
       <div class="footer-copy">&copy; 2025 Ottomator. All rights reserved.</div>
     </div>
   </footer>
-
-  <script>
-document.getElementById('waitlistForm').addEventListener('submit', function(e) {
-  e.preventDefault();
-  const form = e.target;
-  const formData = new FormData(form);
-
-  fetch('https://script.google.com/macros/s/AKfycbzGdSk4faVTsZDJ5klOdis89ijr42Y6Hw0iigku_ZwmkqKHa4yiIhU2mUvm0Ost0dj1kA/exec', {
-    method: 'POST',
-    body: formData,
-    mode: 'no-cors' // <-- key fix
-  })
-  .then(() => {
-    // Google Apps Script won't return JSON with no-cors, so we just redirect
-    window.location.href = 'thankyou.html';
-  })
-  .catch(error => {
-    console.error('Error!', error.message);
-    alert('Something went wrong. Please try again.');
-  });
-});
-
-  </script>
 
 </body>
 </html>
