@@ -66,6 +66,8 @@
       z-index: 0;
       opacity: 0.15;
       filter: blur(100px);
+      pointer-events: none;
+      transition: top 0.2s ease, left 0.2s ease;
     }
 
     .form-wrapper {
@@ -128,35 +130,32 @@
     }
 
     footer {
-      background: #f3f4f6;
-      padding: 60px 20px;
+      background: #2d3e50;
+      padding: 80px 20px 40px;
+      color: #fff;
       text-align: center;
-      border-top: 1px solid #e5e7eb;
-      font-size: 0.95rem;
-      color: #4b5563;
     }
 
     .footer-content {
-      max-width: 800px;
+      max-width: 1100px;
       margin: 0 auto;
     }
 
     .footer-logo {
       font-family: 'Poppins', sans-serif;
-      font-size: 1.6rem;
-      color: #4a6ee0;
+      font-size: 2rem;
+      color: #5c6bc0;
       text-decoration: none;
-      display: inline-block;
-      margin-bottom: 20px;
+      margin-bottom: 30px;
     }
 
     .footer-nav {
-      margin: 20px 0;
+      margin: 30px 0;
     }
 
     .footer-nav a {
-      margin: 0 15px;
-      color: #4b5563;
+      margin: 0 20px;
+      color: #ffffff;
       text-decoration: none;
       font-weight: 500;
     }
@@ -166,7 +165,7 @@
     }
 
     .footer-copy {
-      margin-top: 20px;
+      margin-top: 30px;
       color: #9ca3af;
       font-size: 0.85rem;
     }
@@ -205,7 +204,7 @@
 
   <main>
     <section class="signup-section">
-      <div class="blob-background"></div>
+      <div class="blob-background" id="blob"></div>
       <div class="form-wrapper">
         <div class="form-content">
           <h1>Join Ottomator</h1>
@@ -223,9 +222,7 @@
   <footer>
     <div class="footer-content">
       <a href="index.html" class="footer-logo">Ottomator</a>
-      <div>
-        Be the first to automate your SaaS ops without writing a single line of code. Onboard users, chase invoices, and scale effortlessly — all on autopilot.
-      </div>
+      <p>Be the first to automate your SaaS ops without writing a single line of code. Onboard users, chase invoices, and scale effortlessly — all on autopilot.</p>
       <div class="footer-nav">
         <a href="signup.html">Join Waitlist</a>
         <a href="#">Contact</a>
@@ -235,15 +232,16 @@
     </div>
   </footer>
 
-  <!-- Cursor Blob -->
-  <div id="cursorBlob"></div>
+  <!-- JavaScript for Cursor Blob Movement -->
+  <script>
+    const blob = document.getElementById("blob");
 
-  <!-- Blob Script -->
- <script>
-    const blob = document.getElementById("cursorBlob");
     document.addEventListener("mousemove", (e) => {
-      blob.style.left = `${e.clientX - 125}px`;
-      blob.style.top = `${e.clientY - 125}px`;
+      const mouseX = e.clientX;
+      const mouseY = e.clientY;
+
+      blob.style.left = `${mouseX - blob.offsetWidth / 2}px`;
+      blob.style.top = `${mouseY - blob.offsetHeight / 2}px`;
     });
   </script>
 </body>
