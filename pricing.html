@@ -6,7 +6,7 @@
   <title>Pricing - Ottomator</title>
   <link rel="stylesheet" href="styles.css" />
   <style>
-    /* Blob Styles */
+    /* Cursor Blob */
     #cursorBlob {
       position: fixed;
       width: 250px;
@@ -21,11 +21,9 @@
     }
 
     body {
-      position: relative;
-      background-color: #fefefe;
       font-family: 'Inter', sans-serif;
       margin: 0;
-      padding: 0;
+      background-color: #fefefe;
     }
 
     .pricing-section {
@@ -112,6 +110,35 @@
       background-color: #3b5dc7;
     }
 
+    footer {
+      background-color: #111827;
+      color: white;
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    footer .footer-content {
+      max-width: 960px;
+      margin: auto;
+    }
+
+    footer h3 {
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+    }
+
+    footer p {
+      font-size: 1rem;
+      margin-bottom: 10px;
+      color: #cbd5e1;
+    }
+
+    footer a {
+      color: #4a90e2;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
     @media screen and (max-width: 768px) {
       .pricing-section h2 {
         font-size: 2.2rem;
@@ -132,43 +159,57 @@
   <!-- Pricing Section -->
   <section class="pricing-section">
     <h2>Simple Pricing for Everyone</h2>
-    <p>Choose the plan that fits your automation needs best. Cancel anytime.</p>
+    <p>Choose the plan that scales with your business. No contracts. No surprises.</p>
 
     <div class="pricing-cards">
       <div class="pricing-card">
         <h3>Starter</h3>
-        <div class="price">$0/mo</div>
+        <div class="price">Free</div>
         <ul>
-          <li>Basic workflow automation</li>
-          <li>Email support</li>
-          <li>Community access</li>
+          <li>1 active automation workflow</li>
+          <li>100 tasks/month included</li>
+          <li>Connect up to 3 apps</li>
+          <li>Community support</li>
         </ul>
-        <a href="signup.html" class="btn">Get Started</a>
+        <a href="signup.html" class="btn">Start Free</a>
       </div>
       <div class="pricing-card">
         <h3>Pro</h3>
-        <div class="price">$29/mo</div>
+        <div class="price">$29/month</div>
         <ul>
-          <li>Advanced automations</li>
-          <li>Priority support</li>
           <li>Unlimited workflows</li>
+          <li>10,000 tasks/month</li>
+          <li>Access to premium integrations</li>
+          <li>Priority email support</li>
+          <li>Advanced logic & branching</li>
         </ul>
-        <a href="signup.html" class="btn">Try Pro</a>
+        <a href="signup.html" class="btn">Upgrade to Pro</a>
       </div>
       <div class="pricing-card">
         <h3>Enterprise</h3>
-        <div class="price">Custom</div>
+        <div class="price>Custom</div>
         <ul>
-          <li>Custom solutions</li>
-          <li>Dedicated manager</li>
-          <li>Team onboarding</li>
+          <li>Dedicated onboarding & support</li>
+          <li>Unlimited tasks & users</li>
+          <li>Enterprise-grade security (SOC2, SSO)</li>
+          <li>Custom SLAs & reporting</li>
+          <li>Custom integrations on request</li>
         </ul>
-        <a href="signup.html" class="btn">Contact Us</a>
+        <a href="signup.html" class="btn">Talk to Sales</a>
       </div>
     </div>
   </section>
 
-  <!-- Blob Script -->
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <h3>Ottomator</h3>
+      <p>Supercharge your business with powerful automations. Less busywork, more impact.</p>
+      <p>&copy; 2025 Ottomator. All rights reserved. | <a href="privacy.html">Privacy Policy</a></p>
+    </div>
+  </footer>
+
+  <!-- Cursor Follow Script -->
   <script>
     const blob = document.getElementById("cursorBlob");
     document.addEventListener("mousemove", (e) => {
